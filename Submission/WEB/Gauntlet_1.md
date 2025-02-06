@@ -3,9 +3,9 @@
 > Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
 
 ## Sobre o Desafio  
-Você pode vencer os filtros?  
+Can you beat the filters? 
 
-**Objetivo:** Faça login como administrador.  
+**Objetivo:** Log in as admin.  
 
 ## 🔗 Links do Desafio  
 - [Acesse o desafio](http://jupiter.challenges.picoctf.org:19593/)  
