@@ -1,9 +1,14 @@
-# Título  
-###### Resolvido por @Autor  
+# Java Script Kiddie  
+###### Resolvido por @Menegaldo e @BrunoCuba  
 > Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
 
-## Sobre o Desafio  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
+## Sobre o Desafio
+
+The image link appears broken...
+
+## 🔗 Links do Desafio  
+- [Acesse o desafio - Link 1](https://jupiter.challenges.picoctf.org/problem/17205)  
+- [Acesse o desafio - Link 2](http://jupiter.challenges.picoctf.org:17205)  
 
 ## Solução  
 
