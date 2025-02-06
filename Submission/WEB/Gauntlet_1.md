@@ -1,5 +1,5 @@
 # Gauntlet 1 
-###### Resolvido por @Menegaldo 
+###### Resolvido por @Menegaldo e @BrunoCuba
 > Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
 
 ## Sobre o Desafio  
