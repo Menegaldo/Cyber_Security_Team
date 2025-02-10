@@ -40,7 +40,7 @@ Renomeamos para yo.png.php e fizemos o upload novamente.
 
 ![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
 
-Quando subimos o aquivo, tivemos a resposta de funcionamento.
+Resposta ao subir o arquivo criado.
 
 ![image](https://github.com/user-attachments/assets/f448d0dc-aa4d-44c9-a156-20f23310f1b9)
 
