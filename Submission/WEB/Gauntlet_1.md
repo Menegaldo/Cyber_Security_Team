@@ -1,6 +1,6 @@
 # Gauntlet 1 
 ###### Resolvido por @Menegaldo e @BrunoCuba
-> Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
+> Este é um CTF sobre [SQL Injection]  
 
 ## Sobre o Desafio  
 Can you beat the filters? 
@@ -18,6 +18,12 @@ Boa sorte! 🔥
 ## Solução  
 
 ```
+Ao acessar o site solicitado, chegando em uma janela de login e senha, com as seguintes solicitações:
+```
+![image](https://github.com/user-attachments/assets/bbfac422-eb64-4cb1-8829-41d31270dd6b)
+```
+
+
 round 1 - 
 username:
 admin' --           ( -- comenta todo resto )
