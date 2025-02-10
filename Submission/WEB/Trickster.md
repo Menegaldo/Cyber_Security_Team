@@ -4,12 +4,13 @@
 
 ## Sobre o Desafio
 
-I found a web app that can help process images: PNG images only!
-Additional details will be available after launching your challenge instance.
+Encontrei um aplicativo da web que pode ajudar a processar imagens: apenas imagens PNG!
+Detalhes adicionais estarão disponíveis após o lançamento de sua instância de desafio.
 
 ## Solução  
 
 ```
+
 ```
 
 > Assim, obtemos a flag `DCK{FL_4G}`  
