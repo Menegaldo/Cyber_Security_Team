@@ -25,14 +25,16 @@ Como não foi passado nenhuma credencial e a ideia é evoluir os rounds até o 5
 
 ![image](https://github.com/user-attachments/assets/75983be8-7be6-46fd-a23d-bb24e4897f6c)
 
+```
 round 1 - 
 username:
 admin' --           ( -- comenta todo resto )
 password:
 qualquercoisa
-```
+
 SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
 ```
+
 ![image](https://github.com/user-attachments/assets/cfa0cf35-6072-4005-8687-220fffe93a8e)
 
 
