@@ -21,7 +21,8 @@ E vi que na url ```http://mercury.picoctf.net:32946/filter.php``` continha os me
 ![image](https://github.com/user-attachments/assets/e665f986-4d37-4d1b-94ae-722b0079b467)
 
 
-Com isso minha primeira tentativa foi usar o Login que usei no Web Gauntlet 2, LOGIN:```ad'||'min``` SENHA:```1' IS NOT '2```
+Com isso minha primeira tentativa foi usar o Login que usei no Web Gauntlet 2, LOGIN:```ad'||'min``` SENHA:```1' IS NOT '2```.
+E acabou funcionando!
 ![image](https://github.com/user-attachments/assets/86f0695b-065b-435b-84b3-4c05235fc10d)
 ![image](https://github.com/user-attachments/assets/8eae02cb-ddd8-4f51-9d7d-aec65f7337e7)
 
