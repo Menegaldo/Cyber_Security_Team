@@ -77,7 +77,7 @@ icoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}
 
 
 
-
+```
 <?php
 session_start();
 
@@ -126,9 +126,6 @@ if ($round === 1) {
 
 // picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}
 ?>
-
-
-
 ```
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
