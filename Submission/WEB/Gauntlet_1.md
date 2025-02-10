@@ -70,7 +70,8 @@ Senha: qualquercoisa
 ```
 SELECT * FROM users WHERE username='admin';' AND password='123'
 ```
-![image](https://github.com/user-attachments/assets/29982171-23a7-4856-aa8c-0b9d03ef0117)
+
+![image](https://github.com/user-attachments/assets/93a06447-6252-4480-97ad-0c20a285179d)
 
 O uso do ; separou as duas partes da consulta, mas a aplicação não alterou a execução.
 
