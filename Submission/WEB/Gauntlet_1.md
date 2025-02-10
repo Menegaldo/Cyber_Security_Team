@@ -87,7 +87,7 @@ Senha: qualquercoisa
 SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
 ```
 
-![image](https://github.com/user-attachments/assets/eb5ebfc5-0262-4769-bd60-80975db3cd4a)
+![image](https://github.com/user-attachments/assets/a788338b-c123-4606-ab42-d657a991e581)
 
 A aplicação aceitou a injeção e conseguimos passar para o próximo round.
 
