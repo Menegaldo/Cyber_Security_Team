@@ -7,6 +7,8 @@ Can you beat the filters?
 
 **Objetivo:** Log in as admin.  
 
+[Link_Gauntlet_1](https://play.picoctf.org/practice/challenge/88)
+
 ## 🔗 Links do Desafio  
 - [Acesse o desafio](http://jupiter.challenges.picoctf.org:19593/)  
 - [Página de filtragem](http://jupiter.challenges.picoctf.org:19593/filter.php)  
@@ -17,6 +19,8 @@ Boa sorte! 🔥
 ## Solução  
 
 ```
+
+
 ```
 
 > Assim, obtemos a flag `DCK{FL_4G}`  
