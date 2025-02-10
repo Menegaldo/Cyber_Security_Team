@@ -9,6 +9,7 @@ Last time, I promise!
 
 ## 🔗 Links do Desafio
 
+- [Gauntlet_3](https://play.picoctf.org/practice/challenge/128)
 - [Acesse o site](http://mercury.picoctf.net:8650/)  
 - [Página de filtragem](http://mercury.picoctf.net:8650/filter.php)    
 
