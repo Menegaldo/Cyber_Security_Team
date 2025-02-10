@@ -7,7 +7,8 @@ This website looks familiar...
 
 **Objetivo:** Log in as admin Site:  
 
-## 🔗 Links do Desafio  
+## 🔗 Links do Desafio
+- [Gauntlet_2](https://play.picoctf.org/practice/challenge/174)
 - [Acesse o site](http://mercury.picoctf.net:21336/)  
 - [Página de filtragem](http://mercury.picoctf.net:21336/filter.php)  
 
