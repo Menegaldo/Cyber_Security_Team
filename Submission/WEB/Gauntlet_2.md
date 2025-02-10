@@ -32,6 +32,7 @@ Porém essa tentativa já não foi favorável para mim, pois o site tem um filtr
 
 
 Depois disso, pedi pro gpt me passar todos os comandos do SQLite:
+´´´
 SELECT
 FROM
 WHERE
@@ -81,6 +82,7 @@ max()
 lower()
 upper()
 random()
+´´´
 
 Com todas essas opções comecei a tentar esses comandos, de alguma maneira para que o valor desse positivo e que nenhum filtro barrasse, mas nenhuma ideia que funcionasse. Com isso pedi ajuda ao gpt e ele falou pra eu tentar comparar 2 números diferentes com o IS NOT pra que o valor seja TRUE para que a lógica no SQLite me deixe acessar o site.
 
@@ -100,7 +102,7 @@ E com isso eu consegui o login no site.
 
 Depois acessei o filter.php e ele me apresentou o seguinte:
 
-
+´´´
 <?php
 session_start();
 
@@ -126,5 +128,5 @@ if ($win === 0) {
 
 // picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}
 ?>
-
+´´´
 > Assim, obtemos a flag `picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}`  
