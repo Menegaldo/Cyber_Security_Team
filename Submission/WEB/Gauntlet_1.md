@@ -19,11 +19,13 @@ Boa sorte! 🔥
 
 Ao acessar o site, somos apresentados a uma tela de login onde precisamos fornecer um nome de usuário e senha. O principal desafio aqui é descobrir como "burlar" a filtragem SQL para conseguir logar como o usuário "admin".
 
+![image](https://github.com/user-attachments/assets/bbfac422-eb64-4cb1-8829-41d31270dd6b)
+
 #### Análise Inicial:
 
 Na página de login, ao tentar submeter credenciais genéricas, observamos que o sistema faz uma consulta SQL com base nas entradas fornecidas. O que nos chamou atenção foi que a consulta estava vulnerável a um SQL Injection. Aqui, começamos a explorar como explorar esse tipo de falha.
 
-![image](https://github.com/user-attachments/assets/bbfac422-eb64-4cb1-8829-41d31270dd6b)
+![image](https://github.com/user-attachments/assets/75983be8-7be6-46fd-a23d-bb24e4897f6c)
 
 Round 1:
 No primeiro round, a consulta SQL aceita o uso de comentários para ignorar a parte da senha. Isso foi feito utilizando o símbolo --, que serve para comentar tudo após ele na consulta.
