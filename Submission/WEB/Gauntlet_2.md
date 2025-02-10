@@ -15,28 +15,28 @@ Boa sorte! 🔥
 
 ## Solução  
 
-Ao acessar o site com a 2 questão, percebi que ela seria quase igual a web gauntlet 2, por ter o mesmo esquema de uma página de Login e Senha.
+Ao acessar o site com a segunda questão, percebi que ela seria quase igual ao web Gauntlet 1, por ter o mesmo esquema de uma página de Login e Senha.
 
 ![image](https://github.com/user-attachments/assets/286fe1ca-4336-46bd-80ef-d882e5392d3d)
 
-e depois acessei o filter.php, que no primeiro exercício mostrava quais eram os filtros para não usar no comando da Query. No caso desse exercício é:
+Depois, acessei o `filter.php`, que no primeiro exercício mostrava quais eram os filtros para não usar no comando da Query. No caso deste exercício, os filtros são:
 
 ![image](https://github.com/user-attachments/assets/d59a122f-447c-4c72-a41b-3b0f023db98f)
 
-Minhas primeiras tentativas eu procurei o ChatGpt e ele me deu algumas alternativas como:
+Minhas primeiras tentativas incluíram buscar no ChatGPT por algumas alternativas, e ele me deu o seguinte comando:
 
-´´´
+```sql
 LOGIN: admin' AND 1=1 AND (SELECT name FROM sqlite_master WHERE type='table') --  
 SENHA: qualquer coisa
-´´´
+```
 
-Porém essa tentativa já não foi favorável para mim, pois o site tem um filtro de tamanho de caracter também:
+Porém, essa tentativa não foi favorável, pois o site tem um filtro de tamanho de caracteres também:
 
 ![image](https://github.com/user-attachments/assets/ae16e14f-c01e-477c-9b32-bec59c104f81)
 
-Depois disso, pedi pro gpt me passar todos os comandos do SQLite:
+Depois disso, pedi ao GPT para me passar todos os comandos do SQLite:
 
-´´´
+```sql
 SELECT
 FROM
 WHERE
@@ -65,7 +65,6 @@ EXISTS
 CASE
 =
 <
-=
 <=
 <>
 !=
@@ -86,34 +85,34 @@ max()
 lower()
 upper()
 random()
-´´´
+```
 
-Com todas essas opções comecei a tentar esses comandos, de alguma maneira para que o valor desse positivo e que nenhum filtro barrasse, mas nenhuma ideia que funcionasse. Com isso pedi ajuda ao gpt e ele falou pra eu tentar comparar 2 números diferentes com o IS NOT pra que o valor seja TRUE para que a lógica no SQLite me deixe acessar o site.
+Com todas essas opções, comecei a tentar diferentes comandos de forma que o valor fosse positivo e nenhum filtro fosse barrado, mas nenhuma ideia funcionou. Pedi ajuda ao GPT novamente, e ele sugeriu tentar comparar dois números diferentes com o `IS NOT` para que o valor fosse `TRUE`, permitindo que a lógica no SQLite me desse acesso ao site.
 
-´´´
-Minha primeira tentativa foi
+Minha primeira tentativa foi:
+
+```sql
 LOGIN: 'qualquer coisa'
-Senha: 1' IS NOT '2
-´´´
+SENHA: 1' IS NOT '2
+```
 
 ![image](https://github.com/user-attachments/assets/3e517e79-1815-433c-b75d-a382d167db5b)
 
 ![image](https://github.com/user-attachments/assets/fdbf8787-3af3-4c71-ac97-5ee47694a88e)
 
+Eu percebi que não adiantaria tentar entrar com outro usuário, então voltei ao Web Gauntlet 1 para ver como o login do admin funcionava e tentar burlar o filtro.
 
-E vi que também não adiantaria eu tentar entrar com outro usuário, com isso voltei ao WEB GAUNTLET 1 para ver como era o login de admin para burlar o filtro.
-´´´
-E eu tinha que jogar no campo de LOGIN: ad'||'min
-e aí eu tentei novamente no campo SENHA: 1' IS NOT '2
-´´´
-E com isso eu consegui o login no site.
+No campo de LOGIN, eu precisava usar: `ad'||'min`, e então tentei novamente no campo de SENHA: `1' IS NOT '2`.
 
-![image](https://github.com/user-attachments/assets/1f2b11fe-7eae-40e4-b8dd-779e79cd8a86)
+Com isso, consegui realizar o login no site.
+
+![image](https://github.com/user-attachments/assets/1f2b11fe-7eae-40e4-b8dd-779e79cd8a86)  
+
 ![image](https://github.com/user-attachments/assets/5d4ccf40-2239-47dc-b20e-9391161df011)
 
-Depois acessei o filter.php e ele me apresentou o seguinte:
+Depois, acessei o `filter.php`, que me apresentou o seguinte código:
 
-´´´
+```php
 <?php
 session_start();
 
@@ -139,6 +138,11 @@ if ($win === 0) {
 
 // picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}
 ?>
-´´´
+```
+
+> Assim, obtemos a flag: `picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}`  
+```
+
+Agora o texto está bem mais claro e organizado. Se precisar de mais ajustes, só avisar!
 
 > Assim, obtemos a flag `picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}`  
