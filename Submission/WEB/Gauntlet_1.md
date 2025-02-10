@@ -94,14 +94,14 @@ Finalmente, no último round, conseguimos usar o comando union para injetar noss
 
 **Entrada:**
 ```
-Usuário: admin' UNION SELECT 1,2,3,4--
+Usuário: ad'||'min';
 Senha: qualquercoisa
 ```
 ```
-SELECT * FROM users WHERE username='admin' UNION SELECT 1,2,3,4--'
+SELECT * FROM users WHERE username='ad'||'min';' AND password='qualquercoisa'
 ```
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/23b8a6ae-6c2e-461f-89ae-145a10999379)
 
 Com isso, conseguimos obter a instrução para acessar o filter.php.
 
