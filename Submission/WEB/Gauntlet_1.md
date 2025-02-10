@@ -27,10 +27,10 @@ Na página de login, ao tentar submeter credenciais genéricas, observamos que o
 
 ![image](https://github.com/user-attachments/assets/75983be8-7be6-46fd-a23d-bb24e4897f6c)
 
-Round 1:
+**Round 1:**
 No primeiro round, a consulta SQL aceita o uso de comentários para ignorar a parte da senha. Isso foi feito utilizando o símbolo --, que serve para comentar tudo após ele na consulta.
 
-Entrada:
+**Entrada:**
 ```
 Usuário: admin' --
 Senha: qualquercoisa
@@ -43,10 +43,10 @@ SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
 
 Neste caso, a parte da senha foi ignorada devido ao comentário, permitindo o login com o usuário "admin".
 
-Round 2:
+**Round 2:**
 No segundo round, foi possível observar que mais palavras-chave estavam permitidas na consulta SQL, como /*, outro tipo de comentário. A ideia era testar se podíamos usar esses novos filtros para burlar a autenticação.
 
-Entrada:
+**Entrada:**
 ```
 Usuário: admin' /*
 Senha: qualquercoisa
@@ -56,10 +56,10 @@ SELECT * FROM users WHERE username='admin' /*' AND password='1'
 ```
 O filtro continuou permitindo que a parte da senha fosse ignorada e o login fosse feito com sucesso.
 
-Round 3:
+**Round 3:**
 No terceiro round, a consulta aceitou o uso de ;, que finaliza uma consulta SQL e pode ser usada para iniciar uma nova execução. Testamos esse comportamento para tentar criar uma segunda consulta, mas isso não teve efeito imediato no resultado da aplicação.
 
-Entrada:
+**Entrada:**
 ```
 Usuário: admin';
 Senha: qualquercoisa
@@ -69,10 +69,10 @@ SELECT * FROM users WHERE username='admin';' AND password='123'
 ```
 O uso do ; separou as duas partes da consulta, mas a aplicação não alterou a execução.
 
-Round 4:
+**Round 4:**
 Nesse round, testamos um método diferente de injeção, tentando usar a concatenação para formar o nome de usuário "admin". Isso foi feito com a utilização de ||, que permite a junção de strings em consultas SQL.
 
-Entrada:
+**Entrada:**
 ```
 Usuário: ad'||'min';
 Senha: qualquercoisa
@@ -82,10 +82,10 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
 ```
 A aplicação aceitou a injeção e conseguimos passar para o próximo round.
 
-Round 5:
+**Round 5:**
 Finalmente, no último round, conseguimos usar o comando union para injetar nossa própria consulta SQL e visualizar a flag.
 
-Entrada:
+**Entrada:**
 ```
 Usuário: admin' UNION SELECT 1,2,3,4--
 Senha: qualquercoisa
