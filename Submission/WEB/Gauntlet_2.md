@@ -137,12 +137,7 @@ if ($win === 0) {
 }
 
 // picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}
-?>
+?>  
 ```
-
-> Assim, obtemos a flag: `picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}`  
-```
-
-Agora o texto está bem mais claro e organizado. Se precisar de mais ajustes, só avisar!
 
 > Assim, obtemos a flag `picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}`  
