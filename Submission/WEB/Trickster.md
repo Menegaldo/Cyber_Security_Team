@@ -1,6 +1,6 @@
 # Trickster  
 ###### Resolvido por @Menegaldo
-> Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
+> Este é um CTF sobre [Upload Arbitrário de Arquivos, Execução Remota de Código (RCE) e Exposição de Diretórios e Arquivos Sensíveis
 
 ## Sobre o Desafio
 
