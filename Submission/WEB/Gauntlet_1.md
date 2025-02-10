@@ -22,4 +22,4 @@ Boa sorte! 🔥
 
 ```
 
-> Assim, obtemos a flag `DCK{FL_4G}`  
+> Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
