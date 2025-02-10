@@ -13,11 +13,13 @@ Detalhes adicionais estarão disponíveis após o lançamento de sua instância 
 
 Abrimos a URL do desafio e identificamos uma funcionalidade de upload que aceita apenas arquivos .png.
 
-![image](https://github.com/user-attachments/assets/5a513762-7cf8-4af4-8382-ff46da02f5dc)
+![image](https://github.com/user-attachments/assets/1ad8aadb-93a2-428b-b7a2-7ae33bc847cc)
 
 Criamos um arquivo yo.php com uma simples payload PHP `(<?=\$_GET[0]`?>`)`.
 
 Tentamos enviá-lo, mas o servidor rejeitou, indicando que o nome do arquivo precisava conter .png.
+
+![image](https://github.com/user-attachments/assets/5a513762-7cf8-4af4-8382-ff46da02f5dc)
 
 Renomeamos o arquivo para yo.png.php e tentamos o upload novamente.
 O servidor aceitou o nome, mas ainda rejeitou o arquivo dizendo que não era um PNG válido.
@@ -44,23 +46,31 @@ Encontramos GQ4DOOBVMMYGK.txt e lemos o conteúdo
 http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 
 
-
+1
 ![image](https://github.com/user-attachments/assets/58157f2b-faf5-4fa4-8736-2362f4d855fd)
 
+2
 ![image](https://github.com/user-attachments/assets/3b878932-f653-47d5-bef0-978a6afaa22f)
 
+3
 ![image](https://github.com/user-attachments/assets/192391de-0113-44a6-ab5e-cec08305a643)
 
+4
 ![image](https://github.com/user-attachments/assets/18837203-98d9-44d0-aac9-3c0bf62e7a3a)
 
+5
 ![image](https://github.com/user-attachments/assets/23009445-c52c-47c7-a126-8084b6efd24d)
 
+6
 ![image](https://github.com/user-attachments/assets/5fc90973-f63b-44b4-93d2-7496179895dc)
 
+7
 ![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
 
+8
 ![image](https://github.com/user-attachments/assets/f448d0dc-aa4d-44c9-a156-20f23310f1b9)
 
+9
 ![image](https://github.com/user-attachments/assets/77bd82c3-e2cd-4150-a259-d26c06d14ac9)
 
 
