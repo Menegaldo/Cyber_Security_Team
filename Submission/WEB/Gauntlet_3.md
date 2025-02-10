@@ -14,6 +14,7 @@ Last time, I promise!
 ## Solução  
 
 Acessei o site com essa tela de login:
+
 ![image](https://github.com/user-attachments/assets/894f1710-9ef2-4e1e-8d6c-f9b3cf4e3321)
 
 E vi que na url ```http://mercury.picoctf.net:32946/filter.php``` continha os mesmos filtros do Web Gauntlet 2
