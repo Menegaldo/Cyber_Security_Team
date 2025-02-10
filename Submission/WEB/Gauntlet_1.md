@@ -1,5 +1,5 @@
 # Gauntlet 1 
-###### Resolvido por @Menegaldo e @BrunoCuba
+###### Resolvido por @Menegaldo
 > Este é um CTF sobre [SQL Injection]  
 
 ## Sobre o Desafio  
