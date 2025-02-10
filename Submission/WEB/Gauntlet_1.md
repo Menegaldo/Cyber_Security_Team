@@ -55,7 +55,7 @@ Senha: qualquercoisa
 SELECT * FROM users WHERE username='admin' /*' AND password='1'
 ```
 
-![image](https://github.com/user-attachments/assets/72aa4aab-1fd3-4383-8b5d-974f312d985e)
+![image](https://github.com/user-attachments/assets/30a06c80-9edb-4c60-b3c2-ac64ffcfdb90)
 
 O filtro continuou permitindo que a parte da senha fosse ignorada e o login fosse feito com sucesso.
 
