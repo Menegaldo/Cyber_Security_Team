@@ -4,7 +4,7 @@
 
 ## Sobre o Desafio
 
-Encontrei um aplicativo da web que pode ajudar a processar imagens: apenas imagens PNG!
+Encontrei um aplicativo da web que pode ajudar a processar imagens: apenas imagens PNG!<br>
 Detalhes adicionais estarão disponíveis após o lançamento de sua instância de desafio.
 
 ## Solução  
