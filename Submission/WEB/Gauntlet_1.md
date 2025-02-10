@@ -15,13 +15,27 @@ Can you beat the filters?
 Boa sorte! 🔥  
 
 
-## Solução  
+## Solução
 
-Ao acessar o site solicitado, chegando em uma janela de login e senha, com as seguintes solicitações:
+Ao acessar o site, somos apresentados a uma tela de login onde precisamos fornecer um nome de usuário e senha. O principal desafio aqui é descobrir como "burlar" a filtragem SQL para conseguir logar como o usuário "admin".
+
+#### Análise Inicial:
+
+Na página de login, ao tentar submeter credenciais genéricas, observamos que o sistema faz uma consulta SQL com base nas entradas fornecidas. O que nos chamou atenção foi que a consulta estava vulnerável a um SQL Injection. Aqui, começamos a explorar como explorar esse tipo de falha.
 
 ![image](https://github.com/user-attachments/assets/bbfac422-eb64-4cb1-8829-41d31270dd6b)
 
-Como não foi passado nenhuma credencial e a ideia é evoluir os rounds até o 5, precisamos tentar entrar de alguma forma, quando tentado um login e senha generico, ele demostra no topo da página a solicitação ao banco de dados, que acontece em SQL.
+Round 1:
+No primeiro round, a consulta SQL aceita o uso de comentários para ignorar a parte da senha. Isso foi feito utilizando o símbolo --, que serve para comentar tudo após ele na consulta.
+
+Entrada:
+
+Usuário: admin' --
+Senha: qualquercoisa
+
+```
+SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
+```
 
 ![image](https://github.com/user-attachments/assets/75983be8-7be6-46fd-a23d-bb24e4897f6c)
 
