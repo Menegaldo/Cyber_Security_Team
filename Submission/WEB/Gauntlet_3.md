@@ -18,7 +18,8 @@ Acessei o site com essa tela de login:
 ![image](https://github.com/user-attachments/assets/894f1710-9ef2-4e1e-8d6c-f9b3cf4e3321)
 
 E vi que na url ```http://mercury.picoctf.net:32946/filter.php``` continha os mesmos filtros do Web Gauntlet 2
-![image](https://github.com/user-attachments/assets/9f7279dd-09da-4e81-a6aa-38d7ee89096b)
+![image](https://github.com/user-attachments/assets/e665f986-4d37-4d1b-94ae-722b0079b467)
+
 
 Com isso minha primeira tentativa foi usar o Login que usei no Web Gauntlet 2, LOGIN:```ad'||'min``` SENHA:```1' IS NOT '2```
 ![image](https://github.com/user-attachments/assets/86f0695b-065b-435b-84b3-4c05235fc10d)
