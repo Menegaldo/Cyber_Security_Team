@@ -40,6 +40,8 @@ Renomeamos para yo.png.php e fizemos o upload novamente.
 
 ![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
 
+![image](https://github.com/user-attachments/assets/f448d0dc-aa4d-44c9-a156-20f23310f1b9)
+
 Testamos diretórios comuns (/uploads/, /files/, /images/) e encontramos nosso arquivo em:
 
 ```https
@@ -64,19 +66,6 @@ Encontramos GQ4DOOBVMMYGK.txt e lemos o conteúdo
 http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 ```
 
-> Assim, obtemos a flag `picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}` 
-
-
-4
-![image](https://github.com/user-attachments/assets/18837203-98d9-44d0-aac9-3c0bf62e7a3a)
-
-5
-![image](https://github.com/user-attachments/assets/23009445-c52c-47c7-a126-8084b6efd24d)
-
-
-8
-![image](https://github.com/user-attachments/assets/f448d0dc-aa4d-44c9-a156-20f23310f1b9)
-
-9
 ![image](https://github.com/user-attachments/assets/77bd82c3-e2cd-4150-a259-d26c06d14ac9)
- 
+
+> Assim, obtemos a flag `picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}` 
