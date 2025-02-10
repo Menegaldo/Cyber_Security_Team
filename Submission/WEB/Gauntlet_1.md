@@ -39,7 +39,7 @@ Senha: qualquercoisa
 SELECT * FROM users WHERE username = 'admin' --' AND password = 'qualquercoisa'
 ```
 
-![image](https://github.com/user-attachments/assets/cfa0cf35-6072-4005-8687-220fffe93a8e)
+![image](https://github.com/user-attachments/assets/45c1fdf4-c271-4d91-a22c-c1a304a4db38)
 
 Neste caso, a parte da senha foi ignorada devido ao comentário, permitindo o login com o usuário "admin".
 
