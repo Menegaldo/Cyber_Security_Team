@@ -5,7 +5,7 @@
 ## Sobre o Desafio  
 Last time, I promise!  
 
-**Objetivo:** Log in as admin Site:  
+**Objetivo:** Log in as admin. 
 
 ## 🔗 Links do Desafio
 
