@@ -22,5 +22,12 @@ Detalhes adicionais estarão disponíveis após o lançamento de sua instância 
 
 ![image](https://github.com/user-attachments/assets/18837203-98d9-44d0-aac9-3c0bf62e7a3a)
 
+![image](https://github.com/user-attachments/assets/23009445-c52c-47c7-a126-8084b6efd24d)
+
+![image](https://github.com/user-attachments/assets/5fc90973-f63b-44b4-93d2-7496179895dc)
+
+![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
+
+
 
 > Assim, obtemos a flag `DCK{FL_4G}`  
