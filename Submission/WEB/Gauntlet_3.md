@@ -1,6 +1,6 @@
 # Gauntlet 3
 ###### Resolvido por @Menegaldo e @BrunoCuba
-> Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
+> Este é um CTF sobre [SQL Injection, Weak Filtering, Session Manipulation]
 
 ## Sobre o Desafio  
 Last time, I promise!  
