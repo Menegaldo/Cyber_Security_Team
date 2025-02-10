@@ -24,6 +24,8 @@ Tentamos enviá-lo, mas o servidor rejeitou, indicando que o nome do arquivo pre
 Renomeamos o arquivo para yo.png.php e tentamos o upload novamente.
 O servidor aceitou o nome, mas ainda rejeitou o arquivo dizendo que não era um PNG válido.
 
+![image](https://github.com/user-attachments/assets/3b878932-f653-47d5-bef0-978a6afaa22f)
+
 ![image](https://github.com/user-attachments/assets/58157f2b-faf5-4fa4-8736-2362f4d855fd)
 
 Pegamos os bytes mágicos do PNG (89 50 4E 47 0D 0A 1A 0A).
@@ -61,9 +63,6 @@ http://atlas.picoctf.net:62573/uploads/yo.png.php?0=cat%20../GQ4DOOBVMMYGK.txt
 ```
 
 > Assim, obtemos a flag `picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}` 
-
-2
-![image](https://github.com/user-attachments/assets/3b878932-f653-47d5-bef0-978a6afaa22f)
 
 
 4
