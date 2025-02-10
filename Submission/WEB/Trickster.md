@@ -28,6 +28,11 @@ Detalhes adicionais estarão disponíveis após o lançamento de sua instância 
 
 ![image](https://github.com/user-attachments/assets/c443c4ff-015d-44cc-b707-d0aad97d8398)
 
+![image](https://github.com/user-attachments/assets/f448d0dc-aa4d-44c9-a156-20f23310f1b9)
+
+![image](https://github.com/user-attachments/assets/77bd82c3-e2cd-4150-a259-d26c06d14ac9)
 
 
-> Assim, obtemos a flag `DCK{FL_4G}`  
+
+
+> Assim, obtemos a flag `picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}`  
