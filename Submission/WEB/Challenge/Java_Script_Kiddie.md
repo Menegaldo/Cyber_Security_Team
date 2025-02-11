@@ -6,7 +6,8 @@
 
 The image link appears broken...
 
-## 🔗 Links do Desafio  
+## 🔗 Links do Desafio
+- [Java_Script_Kiddie](https://play.picoctf.org/practice/challenge/29)
 - [Acesse o desafio - Link 1](https://jupiter.challenges.picoctf.org/problem/17205)  
 - [Acesse o desafio - Link 2](http://jupiter.challenges.picoctf.org:17205)  
 
