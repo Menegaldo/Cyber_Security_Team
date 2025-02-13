@@ -13,7 +13,7 @@ The image link appears broken...
 
 ## Solução  
 
-Quando colocar qualquer valor no campo e faz a submissão, recebe um string hexadecimal de volta:<br>
+Quando colocar qualquer valor no campo e faz a submissão, recebe um string de volta:<br>
 ![image](https://github.com/user-attachments/assets/f29b64a1-451c-4a4f-bdbf-38ed2ea0df45)
 
 recebe um string hexadecimal de volta<br>
