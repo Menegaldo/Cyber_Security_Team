@@ -19,7 +19,7 @@ Quando colocar qualquer valor no campo e faz a submissão, recebe um string de v
 recebe um string hexadecimal de volta<br>
 ![image](https://github.com/user-attachments/assets/ed85f336-ba44-4c9b-8254-2682bfce9cff)
 
-```kali
+```bash
 ┌──(kali㉿kali)-[~]
 └─$ python3 cod.py
 
