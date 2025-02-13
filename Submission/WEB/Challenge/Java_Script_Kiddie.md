@@ -20,6 +20,31 @@ recebe um string hexadecimal de volta<br>
 ![image](https://github.com/user-attachments/assets/ed85f336-ba44-4c9b-8254-2682bfce9cff)
 
 ```
+┌──(kali㉿kali)-[~]
+└─$ python3 cod.py
+
+Key 5108180323263640 produces an invalid PNG - Ignoring
+Key 5108180323363640 produces an invalid PNG - Ignoring
+Key 5108180323463640 produces an invalid PNG - Ignoring
+Key 5108180324263640 produces an invalid PNG - Ignoring
+Key 5108180324363640 produces an invalid PNG - Ignoring
+Key 5108180324463640 produces an invalid PNG - Ignoring
+Key 5108180325263640 produces an invalid PNG - Ignoring
+Key 5108180325363640 produces an invalid PNG - Ignoring
+Key 5108180325463640 produces an invalid PNG - Ignoring
+Key 5108180326263640 produces an invalid PNG - Ignoring
+Key 5108180326363640 produces an invalid PNG - Ignoring
+Key 5108180326463640 produces an invalid PNG - Ignoring
+Key 5108180333263640 produces an invalid PNG - Ignoring
+Key 5108180333363640 produces an invalid PNG - Ignoring
+Key 5108180333463640 produces an invalid PNG - Ignoring
+Key 5108180334263640 produces an invalid PNG - Ignoring
+Key 5108180334363640 produces an invalid PNG - Ignoring
+Key 5108180334463640 produces an invalid PNG - Ignoring
+Key 5108180335263640 produces an invalid PNG - Ignoring
+Key 5108180335363640 produces an invalid PNG - Ignoring
+Key 5108180335463640 produces an invalid PNG - Ignoring
+Key 5108180336263640 produces an invalid PNG - Ignoring
 Key 5108180336363640 produces an invalid PNG - Ignoring
 Key 5108180336463640 produces an invalid PNG - Ignoring
 Key 5108180343263640 produces an invalid PNG - Ignoring
@@ -34,7 +59,9 @@ Key 5108180345463640 produces an invalid PNG - Ignoring
 Key 5108180346263640 produces an invalid PNG - Ignoring
 Key 5108180346363640 produces an invalid PNG - Ignoring
 Key 5108180346463640 produces an invalid PNG - Ignoring
+
 ```
+usando a ```Key 5108180345363640 produces a valid PNG - Saving``` como chave.
 
 ![image](https://github.com/user-attachments/assets/60493865-d9df-4669-a027-0418e84ad94b)
 
