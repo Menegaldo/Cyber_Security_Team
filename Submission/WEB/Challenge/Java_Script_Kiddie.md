@@ -13,6 +13,12 @@ The image link appears broken...
 
 ## Solução  
 
+Quando colocar qualquer valor no campo e faz a submissão, recebe um string hexadecimal de volta:
+![image](https://github.com/user-attachments/assets/f29b64a1-451c-4a4f-bdbf-38ed2ea0df45)
+
+recebe um string hexadecimal de volta:
+![image](https://github.com/user-attachments/assets/ed85f336-ba44-4c9b-8254-2682bfce9cff)
+
 
 
 ![image](https://github.com/user-attachments/assets/60493865-d9df-4669-a027-0418e84ad94b)
