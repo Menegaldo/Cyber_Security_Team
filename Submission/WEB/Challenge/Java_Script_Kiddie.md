@@ -14,6 +14,9 @@ The image link appears broken...
 ## Solução  
 
 ```
+
+![image](https://github.com/user-attachments/assets/60493865-d9df-4669-a027-0418e84ad94b)
+
 ```
 
-> Assim, obtemos a flag `DCK{FL_4G}`  
+> Assim, obtemos a flag `picoCTF{066cad9e69c5c7e5d2784185c0feb30b}`  
