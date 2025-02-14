@@ -67,7 +67,7 @@ Verificando o código da página temos esse código HTML.<br>
 
 Colocando qualquer valor no campo e fazendo a submissão.<br>
 
-![image](https://github.com/user-attachments/assets/f29b64a1-451c-4a4f-bdbf-38ed2ea0df45)
+![image](https://github.com/user-attachments/assets/73efbbb3-48cb-4780-b548-3b0c71341e4e)
 
 Abrindo o site no BurpSuite, conseguimos ver que recebemos uma string de volta em decimal, no entanto, em um intervalo de 0 a 255, portanto, ele estão representando binário, aparentemente, quando fazemos uma pesquisa no campo.<br>
 
