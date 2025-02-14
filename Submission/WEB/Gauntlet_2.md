@@ -1,5 +1,5 @@
 # Gauntlet 2
-###### Resolvido por @BrunoCuba 
+###### Resolvido por @Menegaldo e @BrunoCuba 
 > Este é um CTF sobre [SQL Injection, Weak Filtering, Session Manipulation]
 
 ## Sobre o Desafio  
