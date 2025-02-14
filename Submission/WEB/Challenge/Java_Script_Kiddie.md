@@ -98,6 +98,9 @@ Se organizarmos a string em grupos de 16 bytes, podemos ver e identificar um pad
 
 ![image](https://github.com/user-attachments/assets/fc6aa2c6-18f0-4245-a1b4-8c85d2acfdbe)
 
+Se formos localizando os bytes que já conhecemos, vamos visualizar o padrão de deslocamento e chegaremos na seguinte sequência númerica, 5108180345363640, que será a nossa chave.
+
+Anteriormente, resolvemos por força bruta, dessa forma:
 
 Usamos o código a seguir, que pegamos no link: ``` https://github.com/Dvd848/CTFs/blob/master/2019_picoCTF/Java_Script_Kiddie.md```, para tentar achar a key certa para gerar o PNG.
 
