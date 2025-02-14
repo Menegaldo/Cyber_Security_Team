@@ -1,7 +1,6 @@
 # Java Script Kiddie  
 ###### Resolvido por @Menegaldo e @BrunoCuba  
-> Este é um CTF sobre [Tipo de Vulnerabilidade 1, Tipo de Vulnerabilidade 2 e Tipo de Vulnerabilidade 3]  
-
+> Este é um CTF sobre [Byte Shifting, Lack of Input Validation, Sensitive Data Exposure, Client-Side JavaScript Code, Brute Force, Lack of Data Obfuscation e Known Headers Exploitation].
 ## Sobre o Desafio
 
 The image link appears broken...
