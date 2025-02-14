@@ -1,5 +1,5 @@
 # Trickster  
-###### Resolvido por @Menegaldo
+###### Resolvido por @Menegaldo e @BrunoCuba 
 > Este é um CTF sobre [Upload Arbitrário de Arquivos, Execução Remota de Código (RCE) e Exposição de Diretórios e Arquivos Sensíveis
 
 ## Sobre o Desafio
