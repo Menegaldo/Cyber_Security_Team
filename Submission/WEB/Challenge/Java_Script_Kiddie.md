@@ -85,7 +85,7 @@ convertendo essa string para hexadecimal, chegamos nisso.<br>
 
 Sabemos que um arquivo PNG tem os seus 16 primeiros bytes padronizados, sendo eles: ```0x89 0x50 0x4E 0x47 0x0D 0x0A 0x1A 0x0A 0x00 0x00 0x00 0x0D 0x49 0x48 0x44 0x52```.
 
-```hexa
+```
 89: Indica que o arquivo é binário (não um arquivo de texto).
 50 4E 47: "PNG" (em ASCII).
 0D 0A: Um par de caracteres de nova linha (CRLF).
@@ -93,6 +93,11 @@ Sabemos que um arquivo PNG tem os seus 16 primeiros bytes padronizados, sendo el
 00 00 00 0D: O comprimento de 13 bytes para a próxima parte.
 49 48 44 52: Início do bloco IHDR, que contém informações sobre a imagem (tamanho, cor, etc.).
 ```
+
+Se organizarmos a string em grupos de 16 bytes, podemos ver e identificar um padrão.
+
+![image](https://github.com/user-attachments/assets/fc6aa2c6-18f0-4245-a1b4-8c85d2acfdbe)
+
 
 Usamos o código a seguir, que pegamos no link: ``` https://github.com/Dvd848/CTFs/blob/master/2019_picoCTF/Java_Script_Kiddie.md```, para tentar achar a key certa para gerar o PNG.
 
