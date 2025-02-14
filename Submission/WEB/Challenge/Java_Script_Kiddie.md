@@ -96,9 +96,9 @@ Sabemos que um arquivo PNG tem os seus 16 primeiros bytes padronizados, sendo el
 
 Se organizarmos a string em grupos de 16 bytes, podemos ver e identificar um padrão.
 
-![image](https://github.com/user-attachments/assets/fc6aa2c6-18f0-4245-a1b4-8c85d2acfdbe)
+![image](https://github.com/user-attachments/assets/4b17351a-e851-46e5-b97a-ff7d1415c444)
 
-Se formos localizando os bytes que já conhecemos, vamos visualizar o padrão de deslocamento e chegaremos na seguinte sequência númerica, ```5108180345363640```, que será a nossa chave.
+Se formos localizando os bytes que já conhecemos, vamos visualizar o padrão de deslocamento, olhando a posição do byte na coluna começando em 0, teremos a sequência ```5108180345363640```, que será a nossa chave.
 
 Anteriormente, resolvemos por força bruta, dessa forma:
 
