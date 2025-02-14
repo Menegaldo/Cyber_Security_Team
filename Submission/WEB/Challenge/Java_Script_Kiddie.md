@@ -98,7 +98,7 @@ Se organizarmos a string em grupos de 16 bytes, podemos ver e identificar um pad
 
 ![image](https://github.com/user-attachments/assets/fc6aa2c6-18f0-4245-a1b4-8c85d2acfdbe)
 
-Se formos localizando os bytes que já conhecemos, vamos visualizar o padrão de deslocamento e chegaremos na seguinte sequência númerica, 5108180345363640, que será a nossa chave.
+Se formos localizando os bytes que já conhecemos, vamos visualizar o padrão de deslocamento e chegaremos na seguinte sequência númerica, ```5108180345363640```, que será a nossa chave.
 
 Anteriormente, resolvemos por força bruta, dessa forma:
 
