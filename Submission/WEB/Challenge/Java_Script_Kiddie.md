@@ -63,7 +63,7 @@ Verificando o código da página temos esse código HTML.
 </html>
 ```
 
-Abrindo o site no BurpSuite, conseguimos ver que recebemos uma string em  hexadecimal de volta<br>
+Abrindo o site no BurpSuite, conseguimos ver que recebemos uma string em  hexadecimal de volta quando fazemos uma pesquisa no campo.<br>
 ![image](https://github.com/user-attachments/assets/ed85f336-ba44-4c9b-8254-2682bfce9cff)
 
 ```
