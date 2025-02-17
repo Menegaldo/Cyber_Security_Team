@@ -12,6 +12,7 @@ Existem também algumas pistas: pista 1, pista 2, pista 3.
 [Pista 1](https://jupiter.challenges.picoctf.org/static/599404f0bf7426a5a5c2deb538860cda/clue1.wav)<br>
 [Pista 2](https://jupiter.challenges.picoctf.org/static/599404f0bf7426a5a5c2deb538860cda/clue2.wav)<br>
 [Pista 3](https://jupiter.challenges.picoctf.org/static/599404f0bf7426a5a5c2deb538860cda/clue3.wav)<br>
+[transmissão](https://jupiter.challenges.picoctf.org/static/599404f0bf7426a5a5c2deb538860cda/message.wav)
 
 ## Solução
 
