@@ -1,5 +1,5 @@
 # Matryoshka doll
-###### Resolvido por @Menegaldo e @BrunoCuba 
+###### Resolvido por @Menegaldo
 > Este é um CTF sobre []  
 
 ## Sobre o Desafio  
