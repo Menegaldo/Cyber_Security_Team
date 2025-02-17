@@ -12,9 +12,6 @@ Can you beat the filters?
 - [Acesse o desafio](http://jupiter.challenges.picoctf.org:19593/)  
 - [Página de filtragem](http://jupiter.challenges.picoctf.org:19593/filter.php)  
 
-Boa sorte! 🔥  
-
-
 ## Solução
 
 Ao acessar o site, somos apresentados a uma tela de login onde precisamos fornecer um nome de usuário e senha. O principal desafio aqui é descobrir como "burlar" a filtragem SQL para conseguir logar como o usuário "admin".
