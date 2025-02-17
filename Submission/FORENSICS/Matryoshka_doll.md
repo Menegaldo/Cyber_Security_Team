@@ -77,8 +77,11 @@ Aviso de Trailer após o Chunk IEND: Isso pode indicar que há dados extras depo
 Usuário comentou como "Screenshot": Um comentário simples, mas que pode ser relevante dependendo do contexto.
 
 -----------
+imagem 4
 
+![image](https://github.com/user-attachments/assets/cc956a7b-7ad0-45d5-9160-c4451948ec65)
 
+![image](https://github.com/user-attachments/assets/0b899b93-5a24-4d64-b672-551674e61fcc)
 
 > Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b} `  
 
