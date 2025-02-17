@@ -14,7 +14,7 @@ Boa sorte! 🔥
 
 ## Solução
 
-Usando o ```exiftool imagem.jpg```
+Usando o ```exiftool dolls.jpg```
 
 1️⃣ O arquivo foi identificado como PNG, mas o nome é "dolls.jpg", o que pode ser uma pista de que houve alguma modificação no formato.<br>
 
