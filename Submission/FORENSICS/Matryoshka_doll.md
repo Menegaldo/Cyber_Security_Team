@@ -30,6 +30,22 @@ Usando o ```exiftool imagem.jpg```
 
 --------------
 
+Usando o ```binwalk dolls.jpg ```
+
+Imagem PNG: A imagem começa com um arquivo PNG válido, o que parece ser a parte visível do arquivo.
+
+TIFF Image: O binwalk encontrou dados relacionados a uma imagem TIFF logo após o PNG. Isso pode ser parte de um arquivo embutido ou modificado.
+
+Zip Archive: O dado mais importante é o Zip Archive encontrado no byte 272492. Este arquivo comprimido tem o nome base_images/2_c.jpg, sugerindo que dentro da imagem pode haver outro arquivo JPEG oculto.
+
+Fim do Zip Archive: O binwalk também identificou o fim do arquivo zip, indicando que há um arquivo zip completo dentro da imagem.
+
+![image](https://github.com/user-attachments/assets/7f5eb1d1-60bc-4dc3-9950-950506639f1b)
+
+-------------
+
+
+
 
 
 
