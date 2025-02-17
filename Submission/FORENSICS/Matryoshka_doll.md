@@ -44,7 +44,21 @@ Fim do Zip Archive: O binwalk também identificou o fim do arquivo zip, indicand
 
 -------------
 
+Use o comando dd para extrair o conteúdo do arquivo zip a partir dessa posição: dd if=dolls.jpg of=archive.zip bs=1 skip=272492
 
+Use o comando unzip para extrair o conteúdo: unzip archive.zip -d extracted_files
+
+-------------
+
+Os metadados da imagem 2_c.jpg revelam alguns pontos interessantes:
+
+Formato PNG Identificado: Embora o arquivo tenha a extensão .jpg, ele é identificado como um PNG. Isso pode indicar que o arquivo foi renomeado para se passar por um arquivo JPEG, mas na realidade é um arquivo PNG modificado.
+
+Comentário de Usuário: O campo "User Comment" menciona "Screenshot", o que pode ser uma pista adicional, sugerindo que o arquivo é de fato uma captura de tela ou algo relacionado a um conteúdo oculto.
+
+Aviso de Dados após o Chunk PNG IEND: O aviso sobre dados após o IEND (o final do arquivo PNG) é muito relevante, pois indica que há dados extras após o final da imagem PNG. Esse tipo de dado extra frequentemente é usado em técnicas de esteganografia, ou para esconder informações dentro do arquivo.
+
+-----------
 
 
 
