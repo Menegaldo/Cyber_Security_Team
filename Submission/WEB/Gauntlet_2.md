@@ -12,8 +12,6 @@ This website looks familiar...
 - [Acesse o site](http://mercury.picoctf.net:21336/)  
 - [Página de filtragem](http://mercury.picoctf.net:21336/filter.php)  
 
-Boa sorte! 🔥  
-
 ## Solução  
 
 Ao acessar o site com a segunda questão, percebi que ela seria quase igual ao web Gauntlet 1, por ter o mesmo esquema de uma página de Login e Senha.
