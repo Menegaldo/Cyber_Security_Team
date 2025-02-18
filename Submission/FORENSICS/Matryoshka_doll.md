@@ -106,9 +106,6 @@ Ao repetir o processo de análise e extração, chegamos ao arquivo **flag.txt**
 
 Podemos exibir o conteúdo com:  
 
-```bash
-cat flag.txt
-```  
 ![image](https://github.com/user-attachments/assets/0b899b93-5a24-4d64-b672-551674e61fcc)  
 
 > Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b} `
