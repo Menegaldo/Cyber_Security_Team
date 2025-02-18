@@ -102,76 +102,13 @@ Dentro dessa nova extração, encontramos **4_c.jpg**.
 
 Ao repetir o processo de análise e extração, chegamos ao arquivo **flag.txt** dentro do ZIP oculto na imagem **4_c.jpg**.  
 
+![image](https://github.com/user-attachments/assets/cc956a7b-7ad0-45d5-9160-c4451948ec65)  
+
 Podemos exibir o conteúdo com:  
 
 ```bash
 cat flag.txt
 ```  
-
-![image](https://github.com/user-attachments/assets/cc956a7b-7ad0-45d5-9160-c4451948ec65)  
-
 ![image](https://github.com/user-attachments/assets/0b899b93-5a24-4d64-b672-551674e61fcc)  
 
----
-
-### Conclusão  
-
-Esse desafio seguiu exatamente a lógica da Matryoshka doll: cada imagem continha outra oculta dentro dela, exigindo extrações sucessivas até chegarmos à **flag final**. A análise cuidadosa dos metadados e a utilização de ferramentas como **exiftool, binwalk e dd** foram essenciais para resolver o problema.
-
 > Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b} `
-
----xx---xx---
-
-
-
-
-
-
-
-
-Além disso, o **fim do arquivo ZIP** também foi identificado, confirmando que há um arquivo comprimido completo dentro da imagem.  
-
-
--------------
-
-Use o comando dd para extrair o conteúdo do arquivo zip a partir dessa posição: dd if=dolls.jpg of=archive.zip bs=1 skip=272492
-
-Use o comando unzip para extrair o conteúdo: unzip archive.zip -d extracted_files
-
--------------
-imagem 2
-
-Os metadados da imagem 2_c.jpg revelam alguns pontos interessantes:
-
-Formato PNG Identificado: Embora o arquivo tenha a extensão .jpg, ele é identificado como um PNG. Isso pode indicar que o arquivo foi renomeado para se passar por um arquivo JPEG, mas na realidade é um arquivo PNG modificado.
-
-Comentário de Usuário: O campo "User Comment" menciona "Screenshot", o que pode ser uma pista adicional, sugerindo que o arquivo é de fato uma captura de tela ou algo relacionado a um conteúdo oculto.
-
-Aviso de Dados após o Chunk PNG IEND: O aviso sobre dados após o IEND (o final do arquivo PNG) é muito relevante, pois indica que há dados extras após o final da imagem PNG. Esse tipo de dado extra frequentemente é usado em técnicas de esteganografia, ou para esconder informações dentro do arquivo.
-
------------
-
-Parece que o comando binwalk encontrou mais dados interessantes dentro do arquivo:
-
-Arquivo Zip (base_images/3_c.jpg): A partir do byte 187707 (em hexadecimal 0x2DD3B), há novamente um arquivo ZIP oculto dentro da imagem. Este arquivo zip contém um arquivo JPEG chamado base_images/3_c.jpg.
-
-Fim do Arquivo Zip: O binwalk também detectou o fim do arquivo zip nas posições 383805 e 383916, indicando que o arquivo zip está completo e pronto para ser extraído.
-
------------
-imagem 3
-
-A análise da imagem 3_c.jpg revela que ela é identificada como um arquivo PNG, com a presença de um perfil de cores ICC, além de dados extras como curvas de reprodução de cores e informações específicas de dispositivos Apple. Também temos algumas observações importantes:
-
-Aviso de Trailer após o Chunk IEND: Isso pode indicar que há dados extras depois do final do arquivo PNG, o que pode sugerir a presença de esteganografia ou outra camada de dados.
-Usuário comentou como "Screenshot": Um comentário simples, mas que pode ser relevante dependendo do contexto.
-
------------
-imagem 4
-
-![image](https://github.com/user-attachments/assets/cc956a7b-7ad0-45d5-9160-c4451948ec65)
-
-![image](https://github.com/user-attachments/assets/0b899b93-5a24-4d64-b672-551674e61fcc)
-
-quando extraimos o arquivo dentro do arquivo 4, temos um flag.txt, quando damos cat flag.txt no kali temos a flag.
-
-> Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b} `  
