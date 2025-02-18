@@ -1,4 +1,4 @@
-# Matryoshka doll
+# Matryoshka Doll
 ###### Resolvido por @Menegaldo
 > Este é um CTF sobre [Image Steganography, Incorrect File Extensions, Metadata Leakage, Hidden ZIP Files in Images, Forensic Data Extraction]  
 
