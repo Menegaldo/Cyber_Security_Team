@@ -25,3 +25,5 @@ Com isso tudo ele me recomendou esse seguinte comando para jogar no terminal.
 ``` hexdump -v -e '1/4 "%08x"' -e '"\n"' challengefile | xxd -r -p > reconstructed_image.jpg ```
 ![image](https://github.com/user-attachments/assets/18368921-098c-4b21-8370-ff060d704e4f)
 ![image](https://github.com/user-attachments/assets/9e1cf0fe-7db7-4da2-800b-dc4e5b3a192a)
+
+> Assim, obtemos a flag `picoCTF{cert!f1Ed_iNd!4n_s0rrY_3nDian_94cc03f3} `
