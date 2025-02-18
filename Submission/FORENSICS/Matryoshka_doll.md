@@ -10,12 +10,6 @@ As bonecas Matryoshka são um conjunto de bonecas de madeira de tamanho decresce
 [Matryoshka doll](https://play.picoctf.org/practice/challenge/129) <br>
 [Imagem](https://mercury.picoctf.net/static/1b70cffdd2f05427fff97d13c496963f/dolls.jpg)
 
-## Solução
-
-Aqui está sua explicação ajustada para maior clareza e fluidez:  
-
----
-
 ## Solução  
 
 O título do exercício já nos dá uma pista: a **Matryoshka doll** (boneca russa) é caracterizada por conter uma boneca dentro da outra, sempre em tamanhos menores. O enunciado nos fornece apenas um arquivo **.jpg** com essa boneca, o que sugere que podemos estar lidando com um arquivo dentro de outro, de forma análoga ao conceito da Matryoshka.  
