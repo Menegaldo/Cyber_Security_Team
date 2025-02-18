@@ -16,4 +16,6 @@ Existem também algumas pistas: pista 1, pista 2, pista 3.
 
 ## Solução
 
-> Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b} `  
+
+
+> Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b}`
