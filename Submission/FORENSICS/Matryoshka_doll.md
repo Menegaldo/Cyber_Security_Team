@@ -1,6 +1,6 @@
 # Matryoshka doll
 ###### Resolvido por @Menegaldo
-> Este é um CTF sobre []  
+> Este é um CTF sobre [Image Steganography, Incorrect File Extensions, Metadata Leakage, Hidden ZIP Files in Images, Forensic Data Extraction]  
 
 ## Sobre o Desafio  
 As bonecas Matryoshka são um conjunto de bonecas de madeira de tamanho decrescente colocadas umas dentro das outras. Qual é o último? 
