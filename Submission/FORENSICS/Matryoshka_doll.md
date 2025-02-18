@@ -46,13 +46,7 @@ O resultado revelou que o arquivo é, de fato, um **PNG**. Além disso, encontra
 
 ![image](https://github.com/user-attachments/assets/7f5eb1d1-60bc-4dc3-9950-950506639f1b)  
 
-O dado mais relevante, no entanto, é um **arquivo ZIP** encontrado no **offset 272492**. Esse ZIP contém um arquivo chamado **"base_images/2_c.jpg"**, sugerindo que há outra imagem JPEG oculta dentro do arquivo original.  
-
-Aqui está a continuação da explicação, mantendo o mesmo nível de clareza e organização:  
-
----
-
-### Extração do Arquivo ZIP  
+O dado mais relevante, no entanto, é um **arquivo ZIP** encontrado no **offset 272492**. Esse ZIP contém um arquivo chamado **"base_images/2_c.jpg"**, sugerindo que há outra imagem JPEG oculta dentro do arquivo original.    
 
 Como identificamos um arquivo ZIP dentro da imagem no offset **272492**, podemos extraí-lo usando o comando **dd**:  
 
@@ -69,20 +63,6 @@ unzip archive.zip -d extracted_files
 ```  
 
 Isso criará a pasta **extracted_files**, onde encontraremos um novo arquivo chamado **2_c.jpg**.  
-
----
-
-### Analisando a Imagem 2_c.jpg  
-
-Os metadados dessa nova imagem revelam alguns pontos interessantes:  
-
-- **Formato PNG Identificado:** Embora tenha a extensão **.jpg**, o arquivo foi identificado como **PNG**, o que indica que ele pode ter sido renomeado para confundir a análise.  
-- **Comentário do Usuário:** O campo **"User Comment"** contém a palavra **"Screenshot"**, que pode ser uma pista adicional.  
-- **Aviso de Dados Após o Chunk PNG IEND:** Há um aviso de que existem dados extras após o final do arquivo, algo comum em técnicas de **esteganografia**.  
-
----
-
-### Nova Descoberta com Binwalk  
 
 Ao analisar **2_c.jpg** com **binwalk**, encontramos mais um arquivo ZIP embutido:  
 
@@ -105,16 +85,6 @@ unzip archive2.zip -d extracted_files2
 
 Dentro da pasta **extracted_files2**, encontramos um novo arquivo: **3_c.jpg**.  
 
----
-
-### Investigação da Imagem 3_c.jpg  
-
-A análise de **3_c.jpg** revela que:  
-
-- **É um arquivo PNG**, com informações de cores ICC e dados específicos de dispositivos Apple.  
-- **Possui um "trailer" após o chunk IEND**, indicando dados extras que podem esconder outra camada de informação.  
-- **O campo "User Comment" novamente menciona "Screenshot"**, reforçando a possibilidade de que esse arquivo foi gerado de forma proposital para ocultar dados.  
-
 Executamos **binwalk** novamente:  
 
 ```bash
@@ -130,22 +100,12 @@ unzip archive3.zip -d extracted_files3
 
 Dentro dessa nova extração, encontramos **4_c.jpg**.  
 
----
-
-### Última Camada - Imagem 4_c.jpg  
-
 Ao repetir o processo de análise e extração, chegamos ao arquivo **flag.txt** dentro do ZIP oculto na imagem **4_c.jpg**.  
 
 Podemos exibir o conteúdo com:  
 
 ```bash
 cat flag.txt
-```  
-
-E finalmente obtemos a flag:  
-
-```
-picoCTF{bf6acf878dcbd752f4721e41b1b1b66b}
 ```  
 
 ![image](https://github.com/user-attachments/assets/cc956a7b-7ad0-45d5-9160-c4451948ec65)  
@@ -158,6 +118,7 @@ picoCTF{bf6acf878dcbd752f4721e41b1b1b66b}
 
 Esse desafio seguiu exatamente a lógica da Matryoshka doll: cada imagem continha outra oculta dentro dela, exigindo extrações sucessivas até chegarmos à **flag final**. A análise cuidadosa dos metadados e a utilização de ferramentas como **exiftool, binwalk e dd** foram essenciais para resolver o problema.
 
+> Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b} `
 
 ---xx---xx---
 
