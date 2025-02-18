@@ -12,34 +12,50 @@ As bonecas Matryoshka são um conjunto de bonecas de madeira de tamanho decresce
 
 ## Solução
 
-Olhando para o titulo do exercício já temos uma dica, a Matryshka doll é uma boneca russa que tem como caracteristica sem uma boneca dentro da outra, sempre sendo uma um pouco menor que a outra, o enunciado nos da um arquivo .jpg de uma boneca Matryshka doll e somente isso, com essas dicas podemos deduzir que temos possivelmente um arquivo dentro do outro. 
+Aqui está sua explicação ajustada para maior clareza e fluidez:  
 
-Usando o ```exiftool dolls.jpg``` conseguimos verificar que, o arquivo foi identificado como PNG nas com o nome "dolls.jpg, isso significa que o arquivo sofreu uma mudança de formato.<br>
+---
 
-![image](https://github.com/user-attachments/assets/dd32e48a-62d5-4095-8408-3ce79193340c)
+## Solução  
 
-O campo "User Comment" diz "Screenshot", o que sugere que pode ser uma captura de tela.<br>
+O título do exercício já nos dá uma pista: a **Matryoshka doll** (boneca russa) é caracterizada por conter uma boneca dentro da outra, sempre em tamanhos menores. O enunciado nos fornece apenas um arquivo **.jpg** com essa boneca, o que sugere que podemos estar lidando com um arquivo dentro de outro, de forma análoga ao conceito da Matryoshka.  
 
-![image](https://github.com/user-attachments/assets/3da2866c-2fd1-4fa6-a279-dad5b5bab759)
+### Análise Inicial  
 
-O aviso "Trailer data after PNG IEND chunk" indica que há dados extras após o final do arquivo, o que é um forte indício de esteganografia.<br>
+Utilizando o comando:  
 
-![image](https://github.com/user-attachments/assets/b5eaa302-e04b-408f-a687-7e614882454f)
+```bash
+exiftool dolls.jpg
+```  
 
---------------
-imagem 1
+Verificamos que, embora o nome do arquivo seja **dolls.jpg**, ele foi identificado como um **PNG**, o que indica que houve uma alteração de formato.  
 
-Usando o ```binwalk dolls.jpg ```
+![image](https://github.com/user-attachments/assets/dd32e48a-62d5-4095-8408-3ce79193340c)  
 
-Imagem PNG: A imagem começa com um arquivo PNG válido, o que parece ser a parte visível do arquivo.
+Além disso, o campo **"User Comment"** contém a palavra **"Screenshot"**, sugerindo que pode ser uma captura de tela.  
 
-TIFF Image: O binwalk encontrou dados relacionados a uma imagem TIFF logo após o PNG. Isso pode ser parte de um arquivo embutido ou modificado.
+![image](https://github.com/user-attachments/assets/3da2866c-2fd1-4fa6-a279-dad5b5bab759)  
 
-Zip Archive: O dado mais importante é o Zip Archive encontrado no byte 272492. Este arquivo comprimido tem o nome base_images/2_c.jpg, sugerindo que dentro da imagem pode haver outro arquivo JPEG oculto.
+Outro detalhe importante é o aviso **"Trailer data after PNG IEND chunk"**, que indica a presença de dados extras após o final do arquivo PNG—um forte indício de esteganografia.  
 
-Fim do Zip Archive: O binwalk também identificou o fim do arquivo zip, indicando que há um arquivo zip completo dentro da imagem.
+![image](https://github.com/user-attachments/assets/b5eaa302-e04b-408f-a687-7e614882454f)  
 
-![image](https://github.com/user-attachments/assets/7f5eb1d1-60bc-4dc3-9950-950506639f1b)
+### Investigação com Binwalk  
+
+Para uma análise mais profunda, utilizamos o comando:  
+
+```bash
+binwalk dolls.jpg
+```  
+
+O resultado revelou que o arquivo é, de fato, um **PNG**. Além disso, encontramos dados de uma **imagem TIFF** logo após o PNG, o que pode indicar um arquivo embutido ou modificado.  
+
+![image](https://github.com/user-attachments/assets/7f5eb1d1-60bc-4dc3-9950-950506639f1b)  
+
+O dado mais relevante, no entanto, é um **arquivo ZIP** encontrado no **offset 272492**. Esse ZIP contém um arquivo chamado **"base_images/2_c.jpg"**, sugerindo que há outra imagem JPEG oculta dentro do arquivo original.  
+
+Além disso, o **fim do arquivo ZIP** também foi identificado, confirmando que há um arquivo comprimido completo dentro da imagem.  
+
 
 -------------
 
