@@ -26,6 +26,7 @@ Ao comentar isso com o GPT ele me falou que os bytes podem estar em Little Endia
 ![image](https://github.com/user-attachments/assets/fb1d32d6-c077-473a-b087-49c17502542b)
 
 Com isso tudo ele me recomendou esse seguinte comando para jogar no terminal.
+
 ``` hexdump -v -e '1/4 "%08x"' -e '"\n"' challengefile | xxd -r -p > reconstructed_image.jpg ```
 ![image](https://github.com/user-attachments/assets/18368921-098c-4b21-8370-ff060d704e4f)
 ![image](https://github.com/user-attachments/assets/9e1cf0fe-7db7-4da2-800b-dc4e5b3a192a)
