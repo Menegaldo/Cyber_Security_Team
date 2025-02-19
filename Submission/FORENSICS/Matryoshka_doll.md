@@ -30,7 +30,7 @@ Além disso, o campo **"User Comment"** contém a palavra **"Screenshot"**, suge
 
 ![image](https://github.com/user-attachments/assets/3da2866c-2fd1-4fa6-a279-dad5b5bab759)  
 
-Outro detalhe importante é o aviso **"Trailer data after PNG IEND chunk"**, que indica a presença de dados extras após o final do arquivo PNG—um forte indício de esteganografia.  
+Outro detalhe importante é o aviso **"Trailer data after PNG IEND chunk"**, que indica a presença de dados extras após o final do arquivo PNG um forte indício de esteganografia.  
 
 ![image](https://github.com/user-attachments/assets/b5eaa302-e04b-408f-a687-7e614882454f)  
 
