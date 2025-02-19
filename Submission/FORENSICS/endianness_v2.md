@@ -14,6 +14,7 @@ O exercício começa ao baixarmos um arquivo em qual não sabemos o tipo de arqu
 
 Pedindo ajuda para analisar o arquivo pro GPT, ele leu todo seu código em ```HEX``` e já me apontou em uma direção que o arquivo possivelmente seria um arquivo JPEG por conta dos Bytes mágicos no começo do arquivo: ```\xff\xd8\xff```.
 ![image](https://github.com/user-attachments/assets/f1ef58a5-a273-404c-adf6-0726157337e3)
+
 Pensando que seria uma imagem JPEG, por só uma tentativa, tentei colocar .jpeg no final do arquivo para ver se me gerava a imagem, porém não resultou em nada.
 
 Sabendo que a informação do arquivo estava embaralhada pesquisei um programa para que eu conseguisse ler o código em Hexadecimal e ver se o arquivo realmente é  um JPEG de acordo com o GPT. Ele me recomendou um pra usar no Kali Linux chamada ghex.
