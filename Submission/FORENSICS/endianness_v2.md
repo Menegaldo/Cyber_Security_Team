@@ -20,7 +20,11 @@ Sabendo que a informação do arquivo estava embaralhada pesquisei um programa p
 Abrindo o Challengefile no ghex somos apresentados à esse grande conjunto de bytes.
 ![image](https://github.com/user-attachments/assets/5d31f29b-2b7c-4afa-9905-cfff81e401e7)
 E com a informação que o GPT me deu esse arquivo realmente pode ser uma imagem JPEG, porém os Bytes mágicos do JPEG estão ao contrário. Se fosse uma imagem JPEG a ordem correta deles seria ```FF D8 FF E0 ``` mas no arquivo está ``` E0 FF D8 FF ```.
+
+
 Ao comentar isso com o GPT ele me falou que os bytes podem estar em Little Endian, isso é, do Byte menos significativo para o mais significativo, de 4 em 4 posições, se convertessemos de Little para Big Endian, o arquivo possivelmente voltaria para sua forma normal.
+![image](https://github.com/user-attachments/assets/fb1d32d6-c077-473a-b087-49c17502542b)
+
 Com isso tudo ele me recomendou esse seguinte comando para jogar no terminal.
 ``` hexdump -v -e '1/4 "%08x"' -e '"\n"' challengefile | xxd -r -p > reconstructed_image.jpg ```
 ![image](https://github.com/user-attachments/assets/18368921-098c-4b21-8370-ff060d704e4f)
