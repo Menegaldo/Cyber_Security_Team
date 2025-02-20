@@ -42,3 +42,35 @@ You're unbelievable
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> Assim, obtemos a flag `picoCTF{nc_73115_411_dd54ab67} `
