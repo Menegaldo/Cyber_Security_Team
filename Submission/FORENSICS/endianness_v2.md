@@ -25,7 +25,8 @@ E com a informação que o GPT me deu esse arquivo realmente pode ser uma imagem
 
 
 Ao comentar isso com o GPT ele me falou que os bytes podem estar em Little Endian, isso é, do Byte menos significativo para o mais significativo, de 4 em 4 posições, se convertessemos de Little para Big Endian, o arquivo possivelmente voltaria para sua forma normal.
-![image](https://github.com/user-attachments/assets/fb1d32d6-c077-473a-b087-49c17502542b)
+![image](https://github.com/user-attachments/assets/26c27b3d-1be2-456d-9047-f483ff7a9ac6)
+
 
 Com isso tudo ele me recomendou esse seguinte comando para jogar no terminal.
 
