@@ -27,8 +27,11 @@ Esse filtro nos permite visualizar pacotes TCP que contêm dados.
 ![image](https://github.com/user-attachments/assets/66027c1a-4542-4512-bf9c-bc4f073e998b)
 
 
-Analisando esses pacotes TCP e verificando a informação (data) que o pacote possuía, descobrimos uma conversa entre duas pessoas.
-No wireshark acessando o menu -> Analyze -> Follow-> TCP stream :
+Ao analisar os pacotes filtrados, identificamos uma conversa entre duas pessoas. Para visualizar a conversa no Wireshark, seguimos o caminho:
+
+Analyze → Follow → TCP Stream
+
+A conversa interceptada revelou o seguinte conteúdo:
 ```
 Hey, how do you decrypt this file again?
 You're serious?
@@ -48,11 +51,13 @@ Got it.
 You're unbelievable
 ```
 
-Interceptando essa conversa percebemos que devemos filtrar os pacotes TCP na porta 9002. Filtrando no wireshark achamos esses pacotes.
+Com base nessa conversa, percebemos que a transferência de arquivo ocorreu na porta 9002. Aplicamos então o seguinte filtro para isolar esses pacotes:
+```tcp.port == 9002```
+Isso nos permitiu visualizar os pacotes relacionados à transferência do arquivo.
 
 ![image](https://github.com/user-attachments/assets/a7d28e42-98a3-4a69-a947-c21c4a86481c)
 
-Indo no Analyze -> Follow -> TCP stream conseguimos ver em ASCII o arquivo que foi transmitido entre as duas pessoas.
+Seguindo o mesmo procedimento anterior (Analyze → Follow → TCP Stream), conseguimos visualizar o conteúdo do arquivo transmitido em formato ASCII.
 ![image](https://github.com/user-attachments/assets/9912adf6-545f-4562-93db-c647ecb8d724)
 
 Com isso já sabemos que temos que salvar esse aquivo com o nome de ```file.des3```, para que o código passado na conversa< ```openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123```, consiga descriptografar o arquivo.
