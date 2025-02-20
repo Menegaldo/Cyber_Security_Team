@@ -16,7 +16,7 @@ O desafio começa com o download do arquivo ```.pcap```, que pode ser analisado 
 Ao abrirmos o arquivo no Wireshark, nos deparamos com pacotes de protocolos variados.
 ![image](https://github.com/user-attachments/assets/47371886-e51a-4e75-ba2d-fae2e82ac28f)
 
-## Solução  
+🛠## Solução  
 O wireshark é uma ferramenta de captura de pacotes na qual ele nos permite filtrar por pacotes específicos e ver o contéudo transmitido caso a conexão não for segura. No caso o protocolo HTTP. Perguntando para o GPT sobre o pacote e sobre a dica que o exercício nos deu, ele me recomendou algumas opções de filtros para tentar, a maioria não foi bem sucedida mas o filtro que pegou exatamente o que eu queria foi o : ```tcp && data```
 ![image](https://github.com/user-attachments/assets/1c7dc7c3-3448-457a-aec6-7f93e25a4947)
 
