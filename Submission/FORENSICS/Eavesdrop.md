@@ -65,10 +65,19 @@ Com isso já sabemos que temos que salvar esse aquivo com o nome de ```file.des3
 Ao tentarmos com o arquivo salvo em ASCII ao usar o ssl vai aparecer o erro ```bad magic number```, mas é fácil contornar isso, basta voltarmos ao arquivo e salvar ele em ```raw```.
 ![image](https://github.com/user-attachments/assets/b666d6f4-76e1-49a9-9330-d6442a05226c)
 
-Com isso é só usarmos o ```openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123``` no terminal mesmo e ele irá gerar um arquivo com o nome de ```file.txt```
+## 🔑 Recuperando a Flag
+
+Agora que identificamos o arquivo transmitido, precisamos salvá-lo com o nome correto:
+```file.des3```
+Em seguida, utilizamos o comando de descriptografia mencionado na conversa:
+```openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123```
+No entanto, ao tentar descriptografar o arquivo salvo diretamente em ASCII, o erro "bad magic number" aparece. Para corrigir isso, devemos salvar o arquivo no formato RAW em vez de ASCII.
 ![image](https://github.com/user-attachments/assets/0bb69bdb-31e3-4c36-93f8-12263223be04)
 
-Sendo assim é só usarmos um ```cat file.txt``` para lermos o que tem nesse arquivo.
+Após salvar corretamente, repetimos o comando de descriptografia:
+```openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123```
+Isso gera um arquivo chamado file.txt. Para visualizar o conteúdo e obter a flag, utilizamos:
+```cat file.txxt```
 ![image](https://github.com/user-attachments/assets/e7c77cb5-c691-43d2-bb0d-73ae07232dca)
 
 
