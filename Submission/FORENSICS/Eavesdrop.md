@@ -16,9 +16,13 @@ O desafio começa com o download do arquivo ```.pcap```, que pode ser analisado 
 Ao abrirmos o arquivo no Wireshark, nos deparamos com pacotes de protocolos variados.
 ![image](https://github.com/user-attachments/assets/47371886-e51a-4e75-ba2d-fae2e82ac28f)
 
-🛠## Solução  
-O wireshark é uma ferramenta de captura de pacotes na qual ele nos permite filtrar por pacotes específicos e ver o contéudo transmitido caso a conexão não for segura. No caso o protocolo HTTP. Perguntando para o GPT sobre o pacote e sobre a dica que o exercício nos deu, ele me recomendou algumas opções de filtros para tentar, a maioria não foi bem sucedida mas o filtro que pegou exatamente o que eu queria foi o : ```tcp && data```
+## 🛠️ Solução  
+O Wireshark é uma ferramenta poderosa para análise de tráfego de rede, permitindo filtrar pacotes específicos e visualizar o conteúdo transmitido, caso a conexão não seja segura, como no protocolo HTTP.
+
+A partir da dica do desafio, sabemos que devemos encontrar uma conversa de chat e uma transferência de arquivo. Para isso, aplicamos o seguinte filtro no Wireshark: ```tcp && data```
 ![image](https://github.com/user-attachments/assets/1c7dc7c3-3448-457a-aec6-7f93e25a4947)
+
+Esse filtro nos permite visualizar pacotes TCP que contêm dados.
 
 ![image](https://github.com/user-attachments/assets/66027c1a-4542-4512-bf9c-bc4f073e998b)
 
