@@ -1,6 +1,6 @@
 # Eavesdrop
 ###### Resolvido por @Cubano2
-> Este é um CTF sobre [ Capture of Files, Eavesdrop Messages, Forensic Data Extraction]  
+> Este é um CTF sobre [Capture of Files, Eavesdrop Messages, Forensic Data Extraction]  
 
 ## Sobre o Desafio  
 
