@@ -30,8 +30,14 @@ A segunda imagem decodificada tem o seguinte texto "The quieter you are the more
 
 Por fim, a ultima tem a seguinte frase "Alan Eliasen the FutureBoy".
 
+Pesquisando sobre esse trecho "Alan Eliasen the FutureBoy", chegamos até esse site:
 
+`https://futureboy.us/`
+
+Pesquisando dentro do site, achamos esse uma ferramenta `Steganography Tools` nessa URL `https://futureboy.us/stegano/`.
+
+Juntando o arquivo denominado `message.wav` e a senha que estava na primeira imagem, decodificamos e chegamos até essa página `https://futureboy.us/stegano/decode.pl`.
 
 ![image](https://github.com/user-attachments/assets/8e9dad87-a408-49cb-a3a9-a9781083f54d)
 
-> Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b}`
+> Assim, obtemos a flag `picoCTF{the_answer_lies_hidden_in_plain_sight}`
