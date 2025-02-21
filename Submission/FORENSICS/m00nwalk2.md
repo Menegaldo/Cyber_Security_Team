@@ -46,4 +46,4 @@ Combinando o arquivo denominado message.wav com a senha obtida na primeira image
 
 ![image](https://github.com/user-attachments/assets/8e9dad87-a408-49cb-a3a9-a9781083f54d)
 
-> Assim, obtemos a flag `picoCTF{the_answer_lies_hidden_in_plain_sight}`
+> Assim, foi obtida a flag `picoCTF{the_answer_lies_hidden_in_plain_sight}`
