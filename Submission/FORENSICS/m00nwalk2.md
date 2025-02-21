@@ -16,6 +16,11 @@ Existem também algumas pistas: pista 1, pista 2, pista 3.
 
 ## Solução
 
+![clue1](https://github.com/user-attachments/assets/2886fc86-3180-40ae-90f2-ff41c12a0543)
+
+![clue2](https://github.com/user-attachments/assets/9f6113a7-3979-4c5a-ae03-209f473087f3)
+
+![clue3](https://github.com/user-attachments/assets/adc0f600-3438-4970-9181-36f520a1ebc8)
 
 
 > Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b}`
