@@ -20,15 +20,17 @@ O enunciado fornece quatro arquivos no formato .wav e instrui a revisar a últim
 
 Ao processar três dos arquivos pelo software QSSTV (decodificador SSTV), obteve-se a seguinte imagem:
 
-![clue1](https://github.com/user-attachments/assets/3b56b42b-1a30-4957-8b07-fb99e1b0ae90)
+![image](https://github.com/user-attachments/assets/40c7a0e1-efa5-4d89-a562-b67d0335a3f9)
+
 
 Essa imagem contém algumas informações, incluindo o texto `password hidden_stegosaurus`, acompanhado de um desenho de dinossauro.
 
-![clue2](https://github.com/user-attachments/assets/9f6113a7-3979-4c5a-ae03-209f473087f3)
+![image](https://github.com/user-attachments/assets/0d2dd95d-5da5-45a5-9f96-6c4e3a675104)
 
 A segunda imagem decodificada apresenta o texto `The quieter you are the more you can HEAR`, juntamente com um desenho de duas orelhas.
 
-![clue3](https://github.com/user-attachments/assets/adc0f600-3438-4970-9181-36f520a1ebc8)
+![image](https://github.com/user-attachments/assets/7503e69d-29d4-44c3-8a9b-01f45acbb44d)
+
 
 Por fim, a última imagem contém a seguinte frase: `Alan Eliasen the FutureBoy`.
 
