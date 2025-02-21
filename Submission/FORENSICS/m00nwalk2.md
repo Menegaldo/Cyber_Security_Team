@@ -20,7 +20,7 @@ O enunciado fornece quatro arquivos no formato .wav e instrui a revisar a últim
 
 Ao processar três dos arquivos pelo software QSSTV (decodificador SSTV), obteve-se a seguinte imagem:
 
-![clue1](https://github.com/user-attachments/assets/2886fc86-3180-40ae-90f2-ff41c12a0543)
+![clue1](https://github.com/user-attachments/assets/3b56b42b-1a30-4957-8b07-fb99e1b0ae90)
 
 Essa imagem contém algumas informações, incluindo o texto `password hidden_stegosaurus`, acompanhado de um desenho de dinossauro.
 
