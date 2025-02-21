@@ -24,7 +24,7 @@ Ao processar três dos arquivos pelo software QSSTV (decodificador SSTV), obteve
 
 Essa imagem contém algumas informações, incluindo o texto `password hidden_stegosaurus`, acompanhado de um desenho de dinossauro.
 
-![image](https://github.com/user-attachments/assets/0d2dd95d-5da5-45a5-9f96-6c4e3a675104)
+![image](https://github.com/user-attachments/assets/21ce3b6f-98b2-461c-b5d7-a5435664ff3b)
 
 A segunda imagem decodificada apresenta o texto `The quieter you are the more you can HEAR`, juntamente com um desenho de duas orelhas.
 
