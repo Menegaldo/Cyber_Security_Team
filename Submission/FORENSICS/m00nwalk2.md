@@ -28,8 +28,7 @@ Essa imagem contém algumas informações, incluindo o texto `password hidden_st
 
 A segunda imagem decodificada apresenta o texto `The quieter you are the more you can HEAR`, juntamente com um desenho de duas orelhas.
 
-![image](https://github.com/user-attachments/assets/7503e69d-29d4-44c3-8a9b-01f45acbb44d)
-
+![image](https://github.com/user-attachments/assets/d58e8413-9003-4ece-bf2c-3c6943b6fc2a)
 
 Por fim, a última imagem contém a seguinte frase: `Alan Eliasen the FutureBoy`.
 
