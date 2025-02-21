@@ -6,7 +6,7 @@
 
 Baixe esta captura de pacote e encontre o sinalizador.
 
-## 🔗 Links do Desafio
+## Links do Desafio
 [Eavesdrop](https://play.picoctf.org/practice/challenge/264) <br>
 [Arquivo](https://artifacts.picoctf.net/c/134/capture.flag.pcap) <br>
 
