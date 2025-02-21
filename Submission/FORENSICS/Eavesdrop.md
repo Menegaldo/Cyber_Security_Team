@@ -85,4 +85,4 @@ Isso gera um arquivo chamado `file.txt`. Para visualizar o conteúdo e obter a f
 
 ![image](https://github.com/user-attachments/assets/e7c77cb5-c691-43d2-bb0d-73ae07232dca)
 
-> Assim, obtemos a flag `picoCTF{nc_73115_411_dd54ab67} `
+> Assim, foi obtida a flag `picoCTF{nc_73115_411_dd54ab67}`
