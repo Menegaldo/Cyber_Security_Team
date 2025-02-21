@@ -32,5 +32,6 @@ Por fim, a ultima tem a seguinte frase "Alan Eliasen the FutureBoy".
 
 
 
+![image](https://github.com/user-attachments/assets/8e9dad87-a408-49cb-a3a9-a9781083f54d)
 
 > Assim, obtemos a flag `picoCTF{bf6acf878dcbd752f4721e41b1b1b66b}`
