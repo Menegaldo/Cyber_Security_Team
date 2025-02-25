@@ -22,7 +22,7 @@ E dentro do terminal da máquina temos esses arquivos:
 uaf@pwnable:~$ ls
 flag  uaf  uaf.cpp
 ```
-Escrevendo ```cat uaf.cpp``` temos acesso a esse código:
+Escrevendo ```cat uaf.cpp``` temos acesso a esse código, que além da vulnerabilidade UAF também apresenta conceitos de 'Programação Orientada à Objetos':
 
 
 ```c++
