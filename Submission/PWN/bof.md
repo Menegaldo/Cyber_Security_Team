@@ -54,8 +54,15 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/5b512de4-7913-422a-b98c-7cd8de8763f8)
 
+![image](https://github.com/user-attachments/assets/87002075-b9ee-480a-87f3-66004b97b4cb)
 
+![image](https://github.com/user-attachments/assets/2cdbc4b0-72ca-4961-8dd5-2c87fb074e79)
 
+![image](https://github.com/user-attachments/assets/ee88ab18-e00f-4340-86f1-d2f4d14891d6)
+
+![image](https://github.com/user-attachments/assets/825153ba-a22c-4098-80a4-32a08527067d)
+
+![image](https://github.com/user-attachments/assets/56d511d8-946a-4f09-a892-322d0b9b83e1)
 
 
 
