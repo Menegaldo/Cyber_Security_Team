@@ -38,6 +38,26 @@ int main(int argc, char* argv[]){
 }
 ```
 
+permissão de execução
+```
+chmod +x bof
+```
+rodar o arquivo
+```
+./bof
+```
+mensagem no terminal
+```
+overflow me:
+```
+usando o `gdb bof`
+
+![image](https://github.com/user-attachments/assets/5b512de4-7913-422a-b98c-7cd8de8763f8)
+
+
+
+
+
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
 
