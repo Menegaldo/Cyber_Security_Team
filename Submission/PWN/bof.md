@@ -1,6 +1,6 @@
 # bof
 ###### Resolvido por @Menegaldo
-> Este é um CTF sobre []  
+> Este é um CTF sobre [Buffer Overflow]  
 
 ## Sobre o Desafio  
 
@@ -17,6 +17,26 @@ Running at : nc pwnable.kr 9000
 
 ## Solução
 
+```c++
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+void func(int key){
+        char overflowme[32];
+        printf("overflow me : ");
+        gets(overflowme);       // smash me!
+        if(key == 0xcafebabe){
+                system("/bin/sh");
+        }
+        else{
+                printf("Nah..\n");
+        }
+}
+int main(int argc, char* argv[]){
+        func(0xdeadbeef);
+        return 0;
+}
+```
 
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
