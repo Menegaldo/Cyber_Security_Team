@@ -53,6 +53,8 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/65f5b85a-fead-47d0-86ec-a960541f9e53)
 
+(gdb) disas <função_analisada>
+
 ![image](https://github.com/user-attachments/assets/825153ba-a22c-4098-80a4-32a08527067d)
 
 ![image](https://github.com/user-attachments/assets/56d511d8-946a-4f09-a892-322d0b9b83e1)
