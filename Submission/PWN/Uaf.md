@@ -106,5 +106,10 @@ int main(int argc, char* argv[]){
 } 
 ```
 
+Ao analisar o código percebemos que ele tem 3 funções:
+1: Faz a função ``` main ``` chamar o metódo ``` introduce ``` e adiciona 2 objetos.
+2: Cria um array de tamanho indefinido, que é preenchido ao executar o código pelo ``` argv[1] ``` e o array começa a ter o tamanho de ``` argv[1] ```, e depois ele o código abre o arquivo cujo nome foi passado como ``` (argv[2]) ``` e copia seu conteúdo para dentro do array alocado.
+3: Chama a função ``` delete ``` para os objetos que foram colocados previamente
+
 
 >`[Insira a flag]`
