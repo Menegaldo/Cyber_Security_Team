@@ -25,7 +25,7 @@ flag  uaf  uaf.cpp
 Escrevendo ```cat uaf.cpp``` temos acesso a esse código:
 
 
-```
+```c++
 #include <fcntl.h>                                                                                                                           
 #include <iostream>                                                                                                                          
 #include <cstring>                                                                                                                           
