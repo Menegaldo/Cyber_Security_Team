@@ -46,10 +46,7 @@ rodar o arquivo
 ```
 ./bof
 ```
-mensagem no terminal
-```
-overflow me:
-```
+
 usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/5b512de4-7913-422a-b98c-7cd8de8763f8)
