@@ -53,10 +53,6 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/65f5b85a-fead-47d0-86ec-a960541f9e53)
 
-![image](https://github.com/user-attachments/assets/2cdbc4b0-72ca-4961-8dd5-2c87fb074e79)
-
-![image](https://github.com/user-attachments/assets/ee88ab18-e00f-4340-86f1-d2f4d14891d6)
-
 ![image](https://github.com/user-attachments/assets/825153ba-a22c-4098-80a4-32a08527067d)
 
 ![image](https://github.com/user-attachments/assets/56d511d8-946a-4f09-a892-322d0b9b83e1)
