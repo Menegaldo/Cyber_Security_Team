@@ -51,7 +51,7 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/5b512de4-7913-422a-b98c-7cd8de8763f8)
 
-![image](https://github.com/user-attachments/assets/87002075-b9ee-480a-87f3-66004b97b4cb)
+![image](https://github.com/user-attachments/assets/65f5b85a-fead-47d0-86ec-a960541f9e53)
 
 ![image](https://github.com/user-attachments/assets/2cdbc4b0-72ca-4961-8dd5-2c87fb074e79)
 
