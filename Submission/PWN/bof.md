@@ -57,6 +57,9 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/56d511d8-946a-4f09-a892-322d0b9b83e1)
 
+![image](https://github.com/user-attachments/assets/1926e179-6b1c-4d30-a5fc-a9723f19c80e)
+
+
 
 
 > Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
