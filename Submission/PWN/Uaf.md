@@ -114,7 +114,13 @@ Opção 2 (after) → Aloca memória dinâmica, de tamanho ```argv1```, para arm
 
 Opção 3 (free) → Libera os objetos m e w.
 
-Descompilando o código no ghidra precisamos procurar duas funções importantes no código a ```introduce``` e a ```give_shell```, pois na lógica do código, ao trocarmos a informação que adicionamos na opção 1 ```use``` conseguimos fazer o ponteiro que não estaria alocado para a função ```introduce``` e faríamos ele apontar para a função do ```give shell```.
+Descompilando o código no ghidra precisamos procurar duas funções importantes no código a ```introduce``` e a ```give_shell```, pois na lógica do código, ao trocarmos a informação que adicionamos na opção 1 ```use``` conseguimos fazer o ponteiro que não estaria alocado para a função ```introduce``` e faríamos ele apontar para a função do ```give shell```. Devo ressaltar que os objetos ```m``` e ```w``` estão em uma vtable, em C++, as funções virtuais são acessadas através da Virtual Table (vtable), que contém ponteiros para as funções da classe, nesse caso a classe sendo ```human```.
+
+Variavel man
+![image](https://github.com/user-attachments/assets/d3024548-9134-4a4b-a4f0-79c773755914)
+
+
+Quando um objeto chama introduce(), na verdade, ele está acessando o endereço armazenado na vtable.
 Ao procurar o endereço de memória do ```introduce``` achei ele na posição ```00401192```
 ![image](https://github.com/user-attachments/assets/1b710ddb-ff4b-489c-82b1-0909a9d96fca)
 
@@ -128,8 +134,8 @@ Percebemos que seu endereço de memória é ```0040117a```
 Ao subtrair os 2 endereços para sabermos quantos bytes há no meio deles, recebemos 18 bytes de diferença.
 ![image](https://github.com/user-attachments/assets/f284c95d-e2a5-4a4b-9c54-237b3327f579)
 
+python -c 'print ("\80\x11\x40\x00" + "\x00"*18)' > /tmp/uaf-poc
 
 
 
-
->`[Insira a flag]`
+>`yay_f1ag_aft3r_pwning`
