@@ -158,7 +158,7 @@ Os números são então convertidos para valores entre 1 e 45:
 
 ```c
 for(i=0; i<6; i++){
-        lotto[i] = (lotto[i] % 45) + 1;         // 1 ~ 45
+        lotto[i] = (lotto[i] % 45) + 1;
 }
 ```
 
