@@ -97,6 +97,7 @@ cat flag
 > Assim, obtemos a flag `picoCTF{daddy, I just pwned a buFFer :)}`
 
 
+<!--
 
 TIRAR CANARY
 ```
@@ -108,7 +109,8 @@ gcc -fno-stack-protector -z execstack -no-pie -o bof bof.c
 ![image](https://github.com/user-attachments/assets/c18595e5-ba5a-4f99-9f7b-21f4e246069d)
 
 ![image](https://github.com/user-attachments/assets/cdf1fbca-ef25-49ba-bb03-881f63d7157a)
-
+ 
+ -->
 
 
 
