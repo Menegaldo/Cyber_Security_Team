@@ -1,4 +1,4 @@
-# bof
+# lotto
 ###### Resolvido por @Menegaldo
 > Este é um CTF sobre [Operating logic]
 
