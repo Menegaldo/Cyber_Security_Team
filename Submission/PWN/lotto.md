@@ -208,7 +208,7 @@ for i in range(1000):
         break
 ```
 
-O script Python estabelece uma conexão com o servidor SSH utilizando as credenciais fornecidas e, em seguida, executa o programa `lotto`. Para explorar a vulnerabilidade identificada, ele repete o processo de jogo mil vezes. A cada iteração, o script envia o número `1` para selecionar a opção de jogar e insere a sequência de caracteres `b'------'` como entrada, aproveitando a falha na contagem de números repetidos. Após cada tentativa, a resposta do programa é analisada para verificar se a mensagem `"bad luck"` está presente. Caso essa mensagem não apareça, significa que o exploit funcionou e a `flag` foi obtida, encerrando o loop imediatamente.
+O script Python estabelece uma conexão com o servidor SSH utilizando as credenciais fornecidas e, em seguida, executa o programa `lotto`. Para explorar a vulnerabilidade identificada, ele repete o processo de jogo mil vezes. A cada iteração, o script envia o número `1` para selecionar a opção de jogar e insere a sequência de caracteres `b'------'` como entrada, `-` equivale a 45 em decimal, aproveitando a falha na contagem de números repetidos. Após cada tentativa, a resposta do programa é analisada para verificar se a mensagem `"bad luck"` está presente. Caso essa mensagem não apareça, significa que o exploit funcionou e a `flag` foi obtida, encerrando o loop imediatamente.
 
 ![image](https://github.com/user-attachments/assets/dd178db0-a2e6-4e21-9d64-56ed4e3e150f)
 
