@@ -94,7 +94,7 @@ Por fim, executa-se o comando para capturar a flag (`****`):
 ```
 cat flag
 ```
-> Assim, obtemos a flag `picoCTF{daddy, I just pwned a buFFer :)}`
+> Assim, obtemos a flag `daddy, I just pwned a buFFer :)`
 
 
 <!--
