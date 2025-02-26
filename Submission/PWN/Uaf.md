@@ -115,7 +115,7 @@ Opção 2 (after) → Aloca memória dinâmica, de tamanho ```argv1```, para arm
 Opção 3 (free) → Libera os objetos m e w.
 
 Descompilando o código no ghidra precisamos procurar duas funções importantes no código a ```introduce``` e a ```give_shell```, pois na lógica do código, ao trocarmos a informação que adicionamos na opção 1 ```use``` conseguimos fazer o ponteiro que não estaria alocado para a função ```introduce``` e faríamos ele apontar para a função do ```give shell```.
-Ao procurar o endereço de memória do ```introduce``` achei ele na posição ```401192```
+Ao procurar o endereço de memória do ```introduce``` achei ele na posição ```00401192```
 ![image](https://github.com/user-attachments/assets/1b710ddb-ff4b-489c-82b1-0909a9d96fca)
 
 
@@ -124,5 +124,12 @@ E procurando os endereços de memória para achar onde está a função give_she
 ![image](https://github.com/user-attachments/assets/4b496240-1bf8-4a96-b494-6dcd2e86f397)
 
 Percebemos que seu endereço de memória é ```0040117a``` 
+
+Ao subtrair os 2 endereços para sabermos quantos bytes há no meio deles, recebemos 18 bytes de diferença.
+![image](https://github.com/user-attachments/assets/f284c95d-e2a5-4a4b-9c54-237b3327f579)
+
+
+
+
 
 >`[Insira a flag]`
