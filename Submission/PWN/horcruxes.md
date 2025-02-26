@@ -15,9 +15,8 @@ A questão começa logando nesse ssh ```ssh horcruxes@pwnable.kr -p2222``` e den
 
 Colocando no terminal ```cat readme``` podemos ler o arquivo, dentro dele contém essa mensagem:
 
-` horcruxes@pwnable:~$ cat readme
-connect to port 9032 (nc 0 9032). the 'horcruxes' binary will be executed under horcruxes_pwn privilege.
-rop it to read the flag. `
+``` horcruxes@pwnable:~$ cat readme ```
+``` connect to port 9032 (nc 0 9032). the 'horcruxes' binary will be executed under horcruxes_pwn privilege. rop it to read the flag. ```
 
 
 >`[Insira a flag]`
