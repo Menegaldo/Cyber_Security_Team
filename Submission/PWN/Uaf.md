@@ -109,7 +109,9 @@ int main(int argc, char* argv[]){
 Ao analisar o código percebemos que ele tem 3 funções:
 
 Opção 1 (use) → Chama introduce() de m e w.
+
 Opção 2 (after) → Aloca memória dinâmica, de tamanho ```argv1```, para armazenar dados de um arquivo, que está contido em ```argv2```.
+
 Opção 3 (free) → Libera os objetos m e w.
 
 
