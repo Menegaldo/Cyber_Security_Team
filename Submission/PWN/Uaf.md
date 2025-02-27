@@ -129,7 +129,7 @@ Vtable de human
 Quando um objeto chama ```introduce()```, na verdade, ele está acessando o endereço armazenado na vtable. Ao procurar o endereço de memória da função ```introduce```, encontrei-o na posição ```0x401578```.
 
 Neste ponto, fica claro o que precisamos fazer: alocar um espaço de memória usando a opção after para simular um objeto Man real, mas com o ponteiro da vtable modificado. Dessa forma, ao usar a opção use, em vez de chamar introduce, a função give_shell será executada.
-![image](https://github.com/user-attachments/assets/1b710ddb-ff4b-489c-82b1-0909a9d96fca)
+![image](https://github.com/user-attachments/assets/94bc2949-ec58-44ae-9a6a-f4d42e156662)
 
 
 
