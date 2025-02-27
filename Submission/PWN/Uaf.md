@@ -126,22 +126,33 @@ Vtable de human
 ![image](https://github.com/user-attachments/assets/604f0582-36b3-4d67-91a5-dd38965ee463)
 
 
-Quando um objeto chama ```introduce()```, na verdade, ele está acessando o endereço armazenado na vtable. Ao procurar o endereço de memória da função ```introduce```, encontrei-o na posição ```0x401578```.
+Quando um objeto chama ```introduce()```, na verdade, ele está acessando o endereço armazenado na vtable. Pedindo ajuda pro gpt analisar o Ghidra e achar a vtable certa do que queremos ele me deu essa explicação detalhada a seguir: 
+```
+ A vtable de Man começa no endereço 0x401560 e contém vários campos inicializados com 0h, que são apenas preenchimentos (possivelmente espaço reservado para futuras funções virtuais ou alinhamento de memória).
 
+Depois disso, temos:
+
+0x401568 → addr Man::typeinfo (metadados sobre a classe Man).
+0x401570 → addr Human::give_shell → Isso significa que o ponteiro nesse deslocamento está apontando para a função give_shell, que pertence à classe Human.
+0x401578 → addr Man::introduce → Aqui está o ponteiro para a função introduce() da classe Man. 
+
+``` 
+```
+Endereço da vtable
+A vtable de Man está de fato na região que começa em 0x401560. Isso é o bloco de memória que guarda os endereços das funções virtuais de Man.
+
+Offset do método introduce()
+O ponteiro para introduce() está em 0x401578, o que significa que essa função pode ser chamada quando um objeto de Man invoca um método virtual.
+
+Offset do método give_shell()
+O ponteiro para give_shell() está em 0x401570, o que sugere que o primeiro método virtual na vtable foi sobrescrito para apontar para Human::give_shell ao invés da implementação original.
+```
 Neste ponto, fica claro o que precisamos fazer: alocar um espaço de memória usando a opção after para simular um objeto Man real, mas com o ponteiro da vtable modificado. Dessa forma, ao usar a opção use, em vez de chamar introduce, a função give_shell será executada.
 ![image](https://github.com/user-attachments/assets/94bc2949-ec58-44ae-9a6a-f4d42e156662)
 
 
 
-E procurando os endereços de memória para achar onde está a função give_shell:
-![image](https://github.com/user-attachments/assets/4b496240-1bf8-4a96-b494-6dcd2e86f397)
 
-Percebemos que seu endereço de memória é ```0040117a``` 
-
-Ao subtrair os 2 endereços para sabermos quantos bytes há no meio deles, recebemos 18 bytes de diferença.
-![image](https://github.com/user-attachments/assets/f284c95d-e2a5-4a4b-9c54-237b3327f579)
-
-python -c 'print ("\80\x11\x40\x00" + "\x00"*18)' > /tmp/uaf-poc
 
 
 
