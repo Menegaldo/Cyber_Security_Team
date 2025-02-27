@@ -188,4 +188,4 @@ $
 ```
 ![image](https://github.com/user-attachments/assets/d9e1f927-e39c-4ec7-a0d4-06c0457fd740)
 
->`yay_f1ag_aft3r_pwning`
+> Assim, obtemos a flag `yay_f1ag_aft3r_pwning`
