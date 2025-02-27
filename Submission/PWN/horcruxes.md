@@ -119,5 +119,56 @@ undefined4 ropme(void)
 }
 
 ```
+
+Podemos ver que essa função tem um ```if``` pra cada letra de `A` até `G`.
+Procurando essas letras na aba de função no Ghidra temos um horcruxe pra cada letra, por exemplo:
+```
+void A(void)
+
+{
+  printf("You found \"Tom Riddle\'s Diary\" (EXP +%d)\n",a);
+  return;
+}
+```
+
+Mexendo mais um pouco no Ghidra achei uma função com o nome ```init_ABCDEFG```
+```
+void init_ABCDEFG(void)
+
+{
+  ssize_t sVar1;
+  int iVar2;
+  uint local_14;
+  int local_10;
+  
+  local_10 = open("/dev/urandom",0);
+  sVar1 = read(local_10,&local_14,4);
+  if (sVar1 != 4) {
+    puts("/dev/urandom error");
+                    /* WARNING: Subroutine does not return */
+    exit(0);
+  }
+  close(local_10);
+  srand(local_14);
+  iVar2 = rand();
+  a = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  iVar2 = rand();
+  b = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  iVar2 = rand();
+  c = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  iVar2 = rand();
+  d = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  iVar2 = rand();
+  e = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  iVar2 = rand();
+  f = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  iVar2 = rand();
+  g = iVar2 * -0x21524111 + (uint)(0xcafebabd < (uint)(iVar2 * -0x21524111)) * 0x35014542;
+  sum = g + a + b + c + d + e + f;
+  return;
+```
+Nessa função ```init_ABCDEFG``` não entendi muito sua função, mas olhando com calma percebi que no final dela havia uma soma de todos os horcruxes:
+```sum = g + a + b + c + d + e + f;```
+
 >`[Insira a flag]`
 
