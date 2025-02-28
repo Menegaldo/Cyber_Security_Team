@@ -167,8 +167,13 @@ void init_ABCDEFG(void)
   sum = g + a + b + c + d + e + f;
   return;
 ```
-Nessa função ```init_ABCDEFG``` não entendi muito sua função, mas olhando com calma percebi que no final dela havia uma soma de todos os horcruxes:
+Nessa função ```init_ABCDEFG``` não entendi muito seu proprosito, mas olhando com calma percebi que no final dela havia uma soma de todos os horcruxes no qual os valores de cada um eram definidos por ```/dev/urandom error```:
 ```sum = g + a + b + c + d + e + f;```
 
+Acredito que se eu achar o endereço de todas as horcruxes, somar elas, e exutar o Ropne de novo, possivelmente printaria a flag.
+
+Como faremos isso?
+
+Bom, no programa ao ele perguntar pra gente o quanto de xp nos acumulamos e colocarmos a soma de todas as funções 
 >`[Insira a flag]`
 
