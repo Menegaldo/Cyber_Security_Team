@@ -177,7 +177,7 @@ Como faremos isso?
 
 Bom, no programa ao ele perguntar pra gente o quanto de xp nos acumulamos, no qual conseguimos ao acessar todas as funções, somando todos os EXPs de todos os horcruxes do Voldemort conseguimos a flag.
 Para conseguirmos usaremos esse ```payload```:
-```
+```python3
 #!/usr/bin/env python3
 import paramiko
 import time
