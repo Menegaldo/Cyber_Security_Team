@@ -1,18 +1,22 @@
 
 # Horcruxes
 ###### Solved by @Cubano2  
-> Este é um CTF sobre [ROP]
+> Este é um CTF sobre Return-Oriented Programming [ROP]
 
 ## About the Challenge
 
-Voldemort concealed his splitted soul inside 7 horcruxes.<br>
-Find all horcruxes, and ROP it!<br>
-author: jiwon choi<br>
+A questão apresenta um binário executado sob um usuário privilegiado e um desafio baseado em ROP. O objetivo é encontrar todas as sete horcruxes de Voldemort e utilizá-las para obter a flag.
+
+Autor: jiwon choi
 
 ## Solution  
 
-A questão começa logando nesse ssh ```ssh horcruxes@pwnable.kr -p2222``` e dentro dele temos acesso a 2 arquivos:
-```horcruxes``` e ```readme```.
+A conexão com o desafio é feita via SSH:
+```ssh horcruxes@pwnable.kr -p2222```
+
+Dentro do ambiente, dois arquivos são disponibilizados: ```horcruxes``` e ```readme```. O conteúdo do ```readme``` indica a necessidade de conexão via netcat
+
+```nc 0 9032```.
 
 Colocando no terminal ```cat readme``` podemos ler o arquivo, dentro dele contém essa mensagem:
 
@@ -20,8 +24,12 @@ Colocando no terminal ```cat readme``` podemos ler o arquivo, dentro dele conté
 horcruxes@pwnable:~$ cat readme 
 connect to port 9032 (nc 0 9032). the 'horcruxes' binary will be executed under horcruxes_pwn privilege. rop it to read the flag.
 ```
+Além disso, menciona que o binário será executado sob um usuário com privilégios, reforçando a necessidade de um ataque ROP para leitura da flag.
 
-Abri o executável no Ghidra e como na descrição da questão comenta sobre ROP vi uma função com o nome de ```ropme``` e fui averiguar ela.
+
+## Análise do Binário
+
+A análise do binário no Ghidra revela a função ropme(), que implementa um menu interativo. Cada opção (A-G) corresponde a uma função específica, representando uma horcrux e concedendo uma quantidade de experiência (EXP).
 ```
 undefined4 ropme(void)
  
@@ -120,19 +128,12 @@ undefined4 ropme(void)
 }
 
 ```
+A condição para a leitura da flag requer que a entrada do usuário seja igual ao valor armazenado na variável ```sum```.
 
-Podemos ver que essa função tem um ```if``` pra cada letra de `A` até `G`.
-Procurando essas letras na aba de função no Ghidra temos um horcruxe pra cada letra, por exemplo:
-```
-void A(void)
+## Identificação do valor de sum
 
-{
-  printf("You found \"Tom Riddle\'s Diary\" (EXP +%d)\n",a);
-  return;
-}
-```
+A função init_ABCDEFG() inicializa os valores das horcruxes utilizando /dev/urandom e realiza a soma de todas elas:
 
-Mexendo mais um pouco no Ghidra achei uma função com o nome ```init_ABCDEFG```
 ```
 void init_ABCDEFG(void)
 
@@ -168,15 +169,13 @@ void init_ABCDEFG(void)
   sum = g + a + b + c + d + e + f;
   return;
 ```
-Nessa função ```init_ABCDEFG``` não entendi muito seu proprosito, mas olhando com calma percebi que no final dela havia uma soma de todos os horcruxes no qual os valores de cada um eram definidos por ```/dev/urandom error```:
 ```sum = g + a + b + c + d + e + f;```
 
-Acredito que se eu achar o endereço de todas as horcruxes, somar elas, e executar o Ropme de novo, possivelmente printaria a flag.
+Portanto, para obter a flag, é necessário chamar todas as funções correspondentes às horcruxes, extrair seus valores e somá-los corretamente.
 
-Como faremos isso?
+## Exploit 
+O ataque é realizado através de um payload que explora um buffer overflow na entrada de XP, redirecionando a execução para as funções das horcruxes em sequência e coletando os valores de EXP.
 
-Bom, no programa ao ele perguntar pra gente o quanto de xp nos acumulamos, no qual conseguimos ao acessar todas as funções, somando todos os EXPs de todos os horcruxes do Voldemort conseguimos a flag.
-Para conseguirmos usaremos esse ```payload```:
 ```python3
 #!/usr/bin/env python3
 import paramiko
@@ -283,10 +282,10 @@ print(output)
 # Fechar conexão
 client.close()
 ```
+## Resultado
 
-Nesse código eu cheguei muito perto de concluir o exercício, ele até conseguia fazer a soma de todos os números e voltar pra função ```ROPme()``` porém no próprio código ele printava as vezes um número grande e na frente desse número aparecia +-. Ele ficava desse jeito no seguinte exemplo ```+-921902179319921```. Até tentei consertar o código mas a cada alteração que fazia mais distante da flag eu ficava e o código ficava quebrado ou compilava o ```horcruxes``` errado.
-Porém não consegui fazer as alterações a tempo no dia 28/02/25 e no dia seguinte dia 01/03/25 o site desse exercício começou a mudar de servidor, e eu acabei não conseguindo completar a questão. Mas dando uma mexida o código é certo que consigo resolver.
+O exploit quase conseguiu obter a flag, mas um problema foi encontrado: a saída do programa apresentava um número grande com um ```+-``` na frente (```+-921902179319921```). Modificações foram tentadas para corrigir esse comportamento, mas o site do desafio entrou em manutenção no dia seguinte, impossibilitando a conclusão do exploit.
 
-
+## Flag esperada:
 >`[Magic_spell_ls_4vad4_K3draV4]`
 
