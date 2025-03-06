@@ -284,6 +284,9 @@ print(output)
 client.close()
 ```
 
-Nesse código eu cheguei muito perto
->`[Insira a flag]`
+Nesse código eu cheguei muito perto de concluir o exercício, ele até conseguia fazer a soma de todos os números e voltar pra função ```ROPme()``` porém no próprio código ele printava as vezes um número grande e na frente desse número aparecia +-. Ele ficava desse jeito no seguinte exemplo ```+-921902179319921```. Até tentei consertar o código mas a cada alteração que fazia mais distante da flag eu ficava e o código ficava quebrado ou compilava o ```horcruxes``` errado.
+Porém não consegui fazer as alterações a tempo no dia 28/02/25 e no dia seguinte dia 01/03/25 o site desse exercício começou a mudar de servidor, e eu acabei não conseguindo completar a questão. Mas dando uma mexida o código é certo que consigo resolver.
+
+
+>`[Magic_spell_ls_4vad4_K3draV4]`
 
