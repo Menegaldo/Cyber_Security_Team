@@ -1,12 +1,13 @@
 
 # Horcruxes
 ###### Solved by @Cubano2  
+> Este é um CTF sobre [ROP]
 
+## About the Challenge
 
-## About the Challenge  
-Voldemort concealed his splitted soul inside 7 horcruxes.
-Find all horcruxes, and ROP it!
-author: jiwon choi
+Voldemort concealed his splitted soul inside 7 horcruxes.<br>
+Find all horcruxes, and ROP it!<br>
+author: jiwon choi<br>
 
 ## Solution  
 
