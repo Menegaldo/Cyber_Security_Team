@@ -287,5 +287,5 @@ client.close()
 O exploit quase conseguiu obter a flag, mas um problema foi encontrado: a saída do programa apresentava um número grande com um ```+-``` na frente (```+-921902179319921```). Modificações foram tentadas para corrigir esse comportamento, mas o site do desafio entrou em manutenção no dia seguinte, impossibilitando a conclusão do exploit.
 
 ## Flag esperada:
->`[Magic_spell_ls_4vad4_K3draV4]`
+> Assim, obtemos a flag `[Magic_spell_ls_4vad4_K3draV4]`
 
