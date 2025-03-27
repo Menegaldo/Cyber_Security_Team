@@ -24,6 +24,12 @@ A Plataforma de Processamento Fantasma se destaca como um farol para os destemid
 -->
 
 ## Solution  
-[Passo a passo da solução]  
+[Passo a passo da solução]
+
+![image](https://github.com/user-attachments/assets/472e520e-f024-4468-b1d2-1df81705e5d7)
+
+![image](https://github.com/user-attachments/assets/781ff8f6-5b8e-40f5-8ab7-0413bd73913f)
+
+
 
 >`[Insira a flag]`
