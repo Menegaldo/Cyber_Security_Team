@@ -270,7 +270,7 @@ void * createGhostPacket(void *param_1)
 
 Não tem nada em createGhostPacket().
 
-```
+```c
 undefined4 readPacket(uint *param_1)
 
 {
@@ -341,6 +341,127 @@ Se readInput não limita corretamente o tamanho ou não adiciona NUL-terminator,
 Overflow de auStack_34[35] (pois buffer local tem 35 bytes e lê até 32 = ok, mas depende da implementação de readInput)
 
 Mas isso ainda está na stack da função, então não afeta diretamente param_1.
+
+Neste exercicio tambem tem outro executavel com o nome de ```process_arm``` que acaba se comunicando com ```sensor_arm```, e os 2 executaveis compartilham da mesma função ```main```, porém tem algumos funções que um executavel não possui e o outro sim.
+```c
+
+undefined4 main(int param_1,undefined4 *param_2)
+
+{
+  undefined4 local_c;
+  
+  if (param_1 == 2) {
+    SOCKET_PATH = param_2[1];
+    initFunction();
+    setup_socket();
+    puts("Welcome to the Phantom Processing Platform");
+    printf("\n%s",getGhostArt);
+    do {
+      showMenu();
+      __isoc99_scanf(&DAT_00012e70,&local_c);
+      getchar();
+      switch(local_c) {
+      case 1:
+        readGhostData();
+        break;
+      case 2:
+        showGhostData();
+        break;
+      case 3:
+        editGhostData();
+        break;
+      case 4:
+        deleteGhostData();
+        break;
+      case 5:
+        analyzeGhostData();
+        break;
+      case 6:
+        switch_classic_modern();
+        break;
+      case 7:
+        puts("Exiting.");
+        close_socket(sock_fd);
+        return 0;
+      default:
+        puts("Invalid choice. Please enter a number between 1 and 7.");
+      }
+    } while( true );
+  }
+  fprintf(stderr,"Usage: %s <socket_path>\n",*param_2);
+                    /* WARNING: Subroutine does not return */
+  exit(1);
+}
+
+```
+Analisando um pouco mais o executavel ```processor_arm``` percebemos uma função que não existe em ```sensor_arm```.
+Neste caso a função sendo ```appendEmoji```
+
+```c
+
+void appendEmoji(int param_1)
+
+{
+  size_t sVar1;
+  
+  if (is_modern == 0) {
+    if (*(char *)(param_1 + 0x2d) < '`') {
+      if (*(char *)(param_1 + 0x2d) < 'B') {
+        if (*(char *)(param_1 + 0x2d) < '$') {
+          if (*(char *)(param_1 + 0x2d) < '\x06') {
+            sVar1 = strlen((char *)(param_1 + 0xc));
+            builtin_strncpy((char *)(param_1 + 0xc) + sVar1," --",4);
+          }
+          else {
+            sVar1 = strlen((char *)(param_1 + 0xc));
+            builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"  -",4);
+          }
+        }
+        else {
+          sVar1 = strlen((char *)(param_1 + 0xc));
+          builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"  ~",4);
+        }
+      }
+      else {
+        sVar1 = strlen((char *)(param_1 + 0xc));
+        builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"  +",4);
+      }
+    }
+    else {
+      sVar1 = strlen((char *)(param_1 + 0xc));
+      builtin_strncpy((char *)(param_1 + 0xc) + sVar1," ++",4);
+    }
+  }
+  else if (*(char *)(param_1 + 0x2d) < '`') {
+    if (*(char *)(param_1 + 0x2d) < 'B') {
+      if (*(char *)(param_1 + 0x2d) < '$') {
+        if (*(char *)(param_1 + 0x2d) < '\x06') {
+          sVar1 = strlen((char *)(param_1 + 0xc));
+          builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"☹\xfe0f👻",0xb);
+        }
+        else {
+          sVar1 = strlen((char *)(param_1 + 0xc));
+          builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"😕👻",9);
+        }
+      }
+      else {
+        sVar1 = strlen((char *)(param_1 + 0xc));
+        builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"😐👻",9);
+      }
+    }
+    else {
+      sVar1 = strlen((char *)(param_1 + 0xc));
+      builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"🤔👻",9);
+    }
+  }
+  else {
+    sVar1 = strlen((char *)(param_1 + 0xc));
+    builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"😁👻",9);
+  }
+  return;
+}
+```
+
 
 ---------------
 
