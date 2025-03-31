@@ -68,5 +68,28 @@ cpio -idmv < rootfs.cpio
 Agora temos os seguintes arquivos:
 
 ```
-
+bin                   proc
+dev                   processor_arm
+etc                   root
+flag                  rootfs.cpio
+handle_connection.sh  run
+init                  sbin
+lib                   sensor_arm
+lib32                 start.sh
+linuxrc               sys
+media                 tmp
+mnt                   usr
+opt                   var
 ```
+
+Os arquivos que chamam atenção de cara são:
+
+Esses dois são arquivos de inicialização:
+```
+handle_connection.sh
+start.sh
+```
+
+ O `handle_connection.sh` cria um socket temporário e inicializa o `/processor_arm` e o `/sensor_arm`.
+
+
