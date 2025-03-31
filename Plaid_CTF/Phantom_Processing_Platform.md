@@ -437,7 +437,7 @@ void appendEmoji(int param_1)
       if (*(char *)(param_1 + 0x2d) < '$') {
         if (*(char *)(param_1 + 0x2d) < '\x06') {
           sVar1 = strlen((char *)(param_1 + 0xc));
-          builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"☹\xfe0f👻",0xb);
+          builtin_strncpy((char *)(param_1 + 0xc) + sVar1,"☹️👻",0xb);
         }
         else {
           sVar1 = strlen((char *)(param_1 + 0xc));
@@ -461,6 +461,31 @@ void appendEmoji(int param_1)
   return;
 }
 ```
+
+Essa função ```appendEmoji``` se comporta de jeito diferente dependendo do "modo" que o executavel está. No caso o ```Modern``` ou o ```Classic```, no ```Modern``` ele adiciona certos emojis ao titulo do fantasma dependendo do nivel da váriavel ```(param_1 + 0x2d)```, que mexendo mais a fundo, podemos chamar de ```confidence```, pois se traçarmos o caminho que ela faz, ela é chamada na hora em que adicionamos a confiança da nossa visão do possivel fantasma aqui ```printf("Confidence: %hhu\n",(int)*(char *)((int)param_1 + 0x2d))```.
+Bom com toda essa explicação, podemos entender agora a função ```appendemoji```, de acordo com o nível da nossa confiança ele irá atribuir um símbolo, ou um emoji, para o titulo do fantasma, dependendo em qual modo estamos executando.
+Um problema dessa parte, é que quando estamos no ```Modern Mode``` e colocamos o nível de confiança abaixo de 5, o título do nosso fantasma fica com os emojis ☹️👻.
+Por que esses emojis adicionados são um problema? Pois o tamanho desses 2 são de 11 caracteres, e do restante apenas 9 caracteres. Mas mesmo com essa explicação ainda não dá pra entender onde está o problema.
+Na função ```readPacket``` na hora que vamos adcionar o título pro nosso fantasma o código fez uma implementação de uma diferença de 9 caracteres para não ter um overflow na hora de adicionarmos a informação do fantasma.
+```c
+  puts("Enter title of your ghost observation report: ");
+  iVar1 = readInput(param_1 + 3,0x18);
+  if (iVar1 < 1) {
+    puts("Failed to read title.");
+  }
+```
+Porém, como nossos emojis tem um tamanho de 11 conseguimos fazer um overflow de 2 bytes. Com esse overflow de 2 bytes, por conta dos 2 emojis, podemos invadir o campo de ```Type``` do fantasma.
+Para descobrir a representação em hexadecimal usei esse comando em python
+```python
+emoji = "☹️👻"
+print(emoji.encode("utf-8"))
+print([int.from_bytes([b], byteorder='big', signed=True) for b in emoji.encode("utf-8")])
+```
+```
+b'\xe2\x98\xb9\xef\xb8\x8f\xf0\x9f\x91\xbb'
+[-30, -104, -71, -17, -72, -113, -16, -97, -111, -69]
+```
+Com isso o ```Type``` do nosso fantasma ficara definido como -69. Esse será um dos passos para que o buffer overflow ocorra.
 
 
 ---------------
