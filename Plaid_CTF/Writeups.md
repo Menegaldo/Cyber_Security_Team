@@ -108,4 +108,83 @@ Enter the index of the ghost data to show:
 ```
 --------------------
 
+```py
+void appendEmoji(int param_1)
 
+{
+  size_t sVar1;
+  undefined4 *puVar2;
+  
+  if (is_modern == 0) {
+    if (*(char *)(param_1 + 0x2d) < '`') {
+      if (*(char *)(param_1 + 0x2d) < 'B') {
+        if (*(char *)(param_1 + 0x2d) < '$') {
+          if (*(char *)(param_1 + 0x2d) < '\x06') {
+            sVar1 = strlen((char *)(param_1 + 0xc));
+            *(undefined4 *)((char *)(param_1 + 0xc) + sVar1) = 0x2d2d20;
+          }
+          else {
+            sVar1 = strlen((char *)(param_1 + 0xc));
+            *(undefined4 *)((char *)(param_1 + 0xc) + sVar1) = 0x2d2020;
+          }
+        }
+        else {
+          sVar1 = strlen((char *)(param_1 + 0xc));
+          *(undefined4 *)((char *)(param_1 + 0xc) + sVar1) = 0x7e2020;
+        }
+      }
+      else {
+        sVar1 = strlen((char *)(param_1 + 0xc));
+        *(undefined4 *)((char *)(param_1 + 0xc) + sVar1) = 0x2b2020;
+      }
+    }
+    else {
+      sVar1 = strlen((char *)(param_1 + 0xc));
+      *(undefined4 *)((char *)(param_1 + 0xc) + sVar1) = 0x2b2b20;
+    }
+  }
+  else if (*(char *)(param_1 + 0x2d) < '`') {
+    if (*(char *)(param_1 + 0x2d) < 'B') {
+      if (*(char *)(param_1 + 0x2d) < '$') {
+        if (*(char *)(param_1 + 0x2d) < '\x06') {
+          sVar1 = strlen((char *)(param_1 + 0xc));
+          puVar2 = (undefined4 *)((char *)(param_1 + 0xc) + sVar1);
+          *puVar2 = 0xefb998e2;
+          puVar2[1] = 0x9ff08fb8;
+          *(undefined2 *)(puVar2 + 2) = 0xbb91;
+          *(undefined *)((int)puVar2 + 10) = 0;
+        }
+        else {
+          sVar1 = strlen((char *)(param_1 + 0xc));
+          puVar2 = (undefined4 *)((char *)(param_1 + 0xc) + sVar1);
+          *puVar2 = 0x95989ff0;
+          puVar2[1] = 0xbb919ff0;
+          *(undefined *)(puVar2 + 2) = 0;
+        }
+      }
+      else {
+        sVar1 = strlen((char *)(param_1 + 0xc));
+        puVar2 = (undefined4 *)((char *)(param_1 + 0xc) + sVar1);
+        *puVar2 = 0x90989ff0;
+        puVar2[1] = 0xbb919ff0;
+        *(undefined *)(puVar2 + 2) = 0;
+      }
+    }
+    else {
+      sVar1 = strlen((char *)(param_1 + 0xc));
+      puVar2 = (undefined4 *)((char *)(param_1 + 0xc) + sVar1);
+      *puVar2 = 0x94a49ff0;
+      puVar2[1] = 0xbb919ff0;
+      *(undefined *)(puVar2 + 2) = 0;
+    }
+  }
+  else {
+    sVar1 = strlen((char *)(param_1 + 0xc));
+    puVar2 = (undefined4 *)((char *)(param_1 + 0xc) + sVar1);
+    *puVar2 = 0x81989ff0;
+    puVar2[1] = 0xbb919ff0;
+    *(undefined *)(puVar2 + 2) = 0;
+  }
+  return;
+}
+```
