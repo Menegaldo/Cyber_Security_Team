@@ -93,3 +93,35 @@ start.sh
  O `handle_connection.sh` cria um socket temporário e inicializa o `/processor_arm` e o `/sensor_arm`.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+# Crie um ambiente virtual
+python3 -m venv venv
+
+# Ative o ambiente virtual
+source venv/bin/activate
+
+# Agora instale pwntools
+pip install pwntools
+```
+
