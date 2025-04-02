@@ -1,7 +1,6 @@
 ## **Resolução**
 
-
-![[Pasted image 20250402113534.png]]
+![image](https://github.com/user-attachments/assets/9bf1a81f-9b96-4cf9-909a-05bcb3031b02)
 
 O problema fornece a **_phantom processing platform_**, que é uma plataforma para relatar aparições de fantasmas. Ela consiste em dois componentes: um **sensor** e um **processador**. Ambos os binários são compilados para **ARM 32 bits** e estão sendo executados em um ambiente _buildroot_ personalizado.
 
