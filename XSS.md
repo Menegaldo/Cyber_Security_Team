@@ -126,10 +126,10 @@ HTML source:
 
 Input:
 ```
-
+"><svg/a=#"onload='/*#*/prompt(1)'
 ```
 
-Description:
+Description: No Level 7, a entrada é dividida em segmentos de no máximo 12 caracteres. O truque é manipular esses segmentos para fechar tags HTML e iniciar um script em sequência, injetando um código JavaScript com prompt(1). Uma das soluções envolve o uso de <svg> e <script> com manipuladores de eventos para combinar as partes e garantir a execução do código.
 
 HTML source:
 ```
@@ -145,7 +145,7 @@ Input:
 
 ```
 
-Description:
+Description: Neste nível, temos que contornar a remoção de quebras de linha e comente o código de forma a permitir a execução. A técnica envolve usar os separadores de linha Unicode, como U+2028 (separador de parágrafo), que não são filtrados. A solução é injetar o código prompt(1) usando esses caracteres como separadores, permitindo que o código seja executado sem ser filtrado.
 
 HTML source:
 ```
@@ -161,7 +161,7 @@ Input:
 
 ```
 
-Description:
+Description: O Level 9 lida com a transformação de letras usando a função toUpperCase(). O truque é que alguns caracteres Unicode, como ſ, quando convertidos para maiúsculas, se transformam em um caractere ASCII equivalente. Isso permite que se manipule tags HTML de forma a contornar o filtro de tags, como o uso de <ſvg> e <ſcript>.
 
 HTML source:
 ```
@@ -174,10 +174,10 @@ HTML source:
 
 Input:
 ```
-
+p'rompt(1)
 ```
 
-Description:
+Description: No A, o filtro remove a palavra prompt e também impede o uso de apóstrofos '. A solução é dividir a palavra prompt de forma que ela ainda seja válida em JavaScript, como p'rompt(1), que é processada corretamente. Essa técnica contorna as regras de filtragem, mantendo o código funcional.
 
 HTML source:
 ```
@@ -190,10 +190,10 @@ HTML source:
 
 Input:
 ```
-
+"(prompt(1))in"
 ```
 
-Description:
+Description: No B, a dificuldade está em contornar a falta de operadores especiais para concatenar strings e criar código dinâmico. A solução aqui é usar um operador alfanumérico, como o in, que pode ser utilizado para combinar a string desejada sem usar operadores proibidos. A solução envolve injetar código com o uso de in para criar uma expressão válida.
 
 HTML source:
 ```
@@ -209,7 +209,7 @@ Input:
 
 ```
 
-Description:
+Description: O C envolve um filtro que codifica a entrada com a função encodeURIComponent(), o que impede o uso de muitos caracteres. A solução aqui envolve a conversão de texto para números usando o método toString() com a base 36 (ou base 30), permitindo que a string prompt seja convertida em um número, que pode ser avaliado como JavaScript. O truque é usar uma base suficientemente alta para cobrir todos os caracteres necessários.
 
 HTML source:
 ```
@@ -222,10 +222,10 @@ HTML source:
 
 Input:
 ```
-
+{"source":{},"__proto__":{"source":"$`onerror=prompt(1)>"}}
 ```
 
-Description:
+Description: No D, a tarefa é manipular um objeto JSON e contornar as limitações de segurança. O truque aqui é usar a propriedade __proto__ do objeto JSON, que pode ser manipulada para redefinir o valor da chave source e injetar código malicioso. A solução envolve explorar o comportamento de getter/setter do __proto__ para contornar as validações e injetar código JavaScript.
 
 HTML source:
 ```
@@ -241,9 +241,9 @@ Input:
 
 ```
 
-Description:
+Description: No E, a tarefa é lidar com a transformação de caracteres para maiúsculas e as restrições que proíbem alguns esquemas de URI, como javascript:. A solução envolve o uso de data: como esquema URI e a codificação em base64 para ocultar o código JavaScript. A dificuldade aqui está em usar base64 de forma eficiente, com o truque de trabalhar com caracteres em maiúsculo e contornar as restrições de caracteres proibidos.
 
-HTML source:
+HTML source: 
 ```
 
 ```
@@ -254,10 +254,10 @@ HTML source:
 
 Input:
 ```
-
+"><svg><!--#--><script><!--#-->prompt(1<!--#-->)</script>
 ```
 
-Description:
+Description: No F, a entrada é dividida em segmentos de no máximo 15 caracteres. A técnica aqui é usar comentários HTML (<!-- -->) dentro de tags SVG para ocultar partes do código e injetar prompt(1) de maneira disfarçada. A solução envolve dividir o código em segmentos e usar comentários HTML e tags SVG para contornar as limitações de tamanho e manipulação de caracteres.
 
 HTML source:
 ```
