@@ -147,11 +147,11 @@ Input:
 javascript:prompt(1)#{"action":1}
 ```
 
-Description: Neste nível, temos que contornar a remoção de quebras de linha e comente o código de forma a permitir a execução. A técnica envolve usar os separadores de linha Unicode, como U+2028 (separador de parágrafo), que não são filtrados. A solução é injetar o código prompt(1) usando esses caracteres como separadores, permitindo que o código seja executado sem ser filtrado.
+Description: Neste nível, temos que contornar a remoção de quebras de linha e comente o código de forma a permitir a execução. A técnica envolve usar os separadores de linha Unicode, como U+2028 (separador de parágrafo), que não são filtrados. A solução é injetar o código prompt(1) usando esses caracteres como separadores, permitindo que o código seja executado sem ser filtrado. (https://www.compart.com/en/unicode/U+2028)
 
 HTML source:
 ```
-
+ prompt(1) -->
 ```
 
 -----
