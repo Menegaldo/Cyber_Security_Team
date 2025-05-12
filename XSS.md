@@ -144,7 +144,7 @@ HTML source:
 
 Input:
 ```
-
+javascript:prompt(1)#{"action":1}
 ```
 
 Description: Neste nível, temos que contornar a remoção de quebras de linha e comente o código de forma a permitir a execução. A técnica envolve usar os separadores de linha Unicode, como U+2028 (separador de parágrafo), que não são filtrados. A solução é injetar o código prompt(1) usando esses caracteres como separadores, permitindo que o código seja executado sem ser filtrado.
@@ -160,14 +160,14 @@ HTML source:
 
 Input:
 ```
-
+<ſvg/onload=&#112;&#114;&#111;&#109;&#112;&#116;&#40;&#49;&#41;>
 ```
 
 Description: O Level 9 lida com a transformação de letras usando a função toUpperCase(). O truque é que alguns caracteres Unicode, como ſ, quando convertidos para maiúsculas, se transformam em um caractere ASCII equivalente. Isso permite que se manipule tags HTML de forma a contornar o filtro de tags, como o uso de <ſvg> e <ſcript>.
 
 HTML source:
 ```
-
+<h1><SVG/ONLOAD=&#112;&#114;&#111;&#109;&#112;&#116;&#40;&#49;&#41;></h1>
 ```
 
 -----
@@ -212,14 +212,14 @@ HTML source:
 
 Input:
 ```
-
+eval(630038579..toString(30))(1)
 ```
 
 Description: O C envolve um filtro que codifica a entrada com a função encodeURIComponent(), o que impede o uso de muitos caracteres. A solução aqui envolve a conversão de texto para números usando o método toString() com a base 36 (ou base 30), permitindo que a string prompt seja convertida em um número, que pode ser avaliado como JavaScript. O truque é usar uma base suficientemente alta para cobrir todos os caracteres necessários.
 
 HTML source:
 ```
-
+<script>eval(630038579..toString(30))(1)</script>
 ```
 
 -----
@@ -241,18 +241,6 @@ HTML source:
 -----
 
 ![image](https://github.com/user-attachments/assets/36392822-ed9c-4edf-bc35-8aa9d27ceda8)
-
-Input:
-```
-
-```
-
-Description: No E, a tarefa é lidar com a transformação de caracteres para maiúsculas e as restrições que proíbem alguns esquemas de URI, como javascript:. A solução envolve o uso de data: como esquema URI e a codificação em base64 para ocultar o código JavaScript. A dificuldade aqui está em usar base64 de forma eficiente, com o truque de trabalhar com caracteres em maiúsculo e contornar as restrições de caracteres proibidos.
-
-HTML source: 
-```
-
-```
 
 -----
 
