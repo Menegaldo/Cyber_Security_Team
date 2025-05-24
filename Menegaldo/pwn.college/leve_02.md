@@ -1,0 +1,16 @@
+```py
+#!/usr/bin/env python3
+
+from pwn import asm, context, process
+
+context.update(arch='amd64')
+
+shellcode = asm("""
+    mov rdi, 0x1337
+""")
+
+p = process('/challenge/run')
+p.send(shellcode)
+print(p.recvall().decode())
+```
+
