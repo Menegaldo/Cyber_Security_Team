@@ -15,3 +15,6 @@ print(p.recvall().decode())
 ```
 
 pwn.college{QN8sx_elrGAjOt4UKyGk1jphso1.dRTOxwyMyITMyEzW}
+
+![image](https://github.com/user-attachments/assets/f542a952-5563-456c-a9ad-319612edc26e)
+
